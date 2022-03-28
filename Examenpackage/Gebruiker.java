@@ -11,4 +11,14 @@ public class Gebruiker {
         this.gebruikerNummer = gebruikerNummer;
         this.admin = admin;
     }
+
+    // public void maakExamen(/* Examen examen */){
+    //     if admin.equals(true){
+    //         // maak examen
+    //     }
+    // }
+
+    // public resultaat getResultaat(/* Examen examen */){
+    //     return resultaat;
+    // }
 }
