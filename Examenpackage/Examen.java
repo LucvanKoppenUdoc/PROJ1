@@ -42,4 +42,13 @@ public class Examen {
         this.vragen.add(vraag);
     }
 
+    @Override
+    public String toString() {
+        return "Examen{" +
+                "naam='" + naam + '\'' +
+                ", studentenGeslaagd=" + studentenGeslaagd +
+                ", vragen=" + vragen +
+                ", teBehalenPunten=" + teBehalenPunten +
+                '}';
+    }
 }

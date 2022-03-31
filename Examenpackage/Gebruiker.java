@@ -26,7 +26,22 @@ public class Gebruiker {
          }
      }
 
-//    public Resultaat getResulaat() {
+    public Integer getGebruikerNummer() {
+        return gebruikerNummer;
+    }
+
+    //    public Resultaat getResulaat() {
 //        return resulaten;
 //    }
+
+
+    @Override
+    public String toString() {
+        return "Gebruiker{" +
+                "naam='" + naam + '\'' +
+                ", gebruikerNummer=" + gebruikerNummer +
+                ", resulaten=" + resulaten +
+                ", admin=" + admin +
+                '}';
+    }
 }

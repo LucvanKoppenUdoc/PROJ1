@@ -18,14 +18,31 @@ public class Gebruikerslijst {
         return gebruikersLijst;
     }
 
-    public void getStudentOnName(String naam) {
-         Gebruiker match;
+    public Gebruiker getStudentOnName(String naam) {
+         Gebruiker match = null;
         for (Gebruiker gebruiker : this.gebruikersLijst){
+        if (gebruiker.getNaam() == naam) {
+            match = gebruiker;
+        }
 
-                System.out.println(gebruiker.getNaam());
 
             }
+        return match;
         }
+
+
+    public Gebruiker getStudentOnGebruikerNummer(int gebruikernummer) {
+        Gebruiker match = null;
+        for (Gebruiker gebruiker : this.gebruikersLijst){
+            if (gebruiker.getGebruikerNummer() == gebruikernummer) {
+                match = gebruiker;
+            }
+
+
+        }
+        return match;
+    }
+
 
     @Override
     public String toString() {

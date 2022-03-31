@@ -30,4 +30,15 @@ public class Resultaat {
     public boolean isGeslaagd() {
         return geslaagd;
     }
+
+    @Override
+    public String toString() {
+        return "Resultaat{" +
+                "examen=" + examen +
+                ", gebruiker=" + gebruiker +
+                ", cijfer=" + cijfer +
+                ", alleResultaten=" + alleResultaten +
+                ", geslaagd=" + geslaagd +
+                '}';
+    }
 }

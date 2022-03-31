@@ -13,6 +13,8 @@ public class Main {
         Gebruikerslijst gebruikers = new Gebruikerslijst(lijstje);
 
         System.out.println(gebruikers);
+
+        System.out.println(gebruikers.getStudentOnGebruikerNummer(21095582));
     }
 
 }

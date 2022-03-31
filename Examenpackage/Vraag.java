@@ -23,4 +23,13 @@ public class Vraag {
     public ArrayList<String> getKeuzeAntwoorden() {
         return keuzeAntwoorden;
     }
+
+    @Override
+    public String toString() {
+        return "Vraag{" +
+                "vraagstelling='" + vraagstelling + '\'' +
+                ", goedAntwoord=" + goedAntwoord +
+                ", keuzeAntwoorden=" + keuzeAntwoorden +
+                '}';
+    }
 }
