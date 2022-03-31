@@ -1,8 +1,12 @@
 package Examenpackage;
+
+
+import java.util.*;
+
 public class Gebruiker {
     private String naam;
     private Integer gebruikerNummer;
-    //private ArrayList<Resultaat> resulaten = new ArrayList<Resultaat>();
+    private ArrayList<Resultaat> resulaten = new ArrayList<Resultaat>();
     private boolean admin;
 
 
@@ -12,13 +16,13 @@ public class Gebruiker {
         this.admin = admin;
     }
 
-    // public void maakExamen(/* Examen examen */){
-    //     if admin.equals(true){
-    //         // maak examen
-    //     }
-    // }
+     public void maakExamen(){
+         if (admin == true) {
+             Examen examen = new Examen("examen 1", 10);
+         }
+     }
 
-    // public resultaat getResultaat(/* Examen examen */){
-    //     return resultaat;
-    // }
+//    public Resultaat getResulaat() {
+//        return resulaten;
+//    }
 }

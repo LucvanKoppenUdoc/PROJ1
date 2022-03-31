@@ -7,4 +7,12 @@ public class gegevenAntwoord {
         this.vragen = vragen;
         this.gegevenAntwoord = gegevenAntwoord;
     }
+
+    public String getGegevenAntwoord() {
+        return gegevenAntwoord;
+    }
+
+    public void setGegevenAntwoord(String gegevenAntwoord) {
+        this.gegevenAntwoord = gegevenAntwoord;
+    }
 }

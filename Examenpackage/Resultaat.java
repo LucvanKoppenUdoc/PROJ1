@@ -1,9 +1,12 @@
 package Examenpackage;
+
+import java.util.ArrayList;
+
 public class Resultaat {
     private Examen examen;
     private Gebruiker gebruiker;
     private double cijfer;
-    //private ArrayList<Resultaat> alleResultaten = new ArrayList<Resultaat>();
+    private ArrayList<Resultaat> alleResultaten = new ArrayList<Resultaat>();
     private boolean geslaagd;
 
 
@@ -11,5 +14,20 @@ public class Resultaat {
         this.gebruiker = student;
         this.examen = examen;
     }
-    ex
+
+    public Examen getExamen() {
+        return examen;
+    }
+
+    public Gebruiker getGebruiker() {
+        return gebruiker;
+    }
+
+    public ArrayList<Resultaat> getAlleResultaten() {
+        return alleResultaten;
+    }
+
+    public boolean isGeslaagd() {
+        return geslaagd;
+    }
 }
