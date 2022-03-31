@@ -11,4 +11,5 @@ public class Resultaat {
         this.gebruiker = student;
         this.examen = examen;
     }
+    ex
 }
