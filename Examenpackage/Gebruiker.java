@@ -16,7 +16,11 @@ public class Gebruiker {
         this.admin = admin;
     }
 
-     public void maakExamen(){
+    public String getNaam() {
+        return naam;
+    }
+
+    public void maakExamen(){
          if (admin == true) {
              Examen examen = new Examen("examen 1", 10);
          }
