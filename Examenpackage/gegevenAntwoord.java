@@ -1,10 +1,10 @@
 package Examenpackage;
 public class gegevenAntwoord {
-    private Vraag vragen;
+    private Vraag vraag;
     private String gegevenAntwoord;
     
-    public gegevenAntwoord(Vraag vragen, String gegevenAntwoord){
-        this.vragen = vragen;
+    public gegevenAntwoord(Vraag vraag, String gegevenAntwoord){
+        this.vraag = vraag;
         this.gegevenAntwoord = gegevenAntwoord;
     }
 
