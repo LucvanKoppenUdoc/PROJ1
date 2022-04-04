@@ -12,9 +12,11 @@ public class Main {
         lijstje.add(gebruiker1);
         Gebruikerslijst gebruikers = new Gebruikerslijst(lijstje);
 
-        System.out.println(gebruikers);
+        //System.out.println(gebruikers);
+        //System.out.println(gebruikers.getStudentOnGebruikerNummer(21095582));
 
-        System.out.println(gebruikers.getStudentOnGebruikerNummer(21095582));
+        System.out.println("Welkom bij het examen programma\n1:\tkeuze 1\n2: \tkeuze2\n3: \tkeuze3\n4: \tkeuze4");
+
     }
 
 }
