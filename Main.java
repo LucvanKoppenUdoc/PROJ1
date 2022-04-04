@@ -3,7 +3,7 @@
 import Examenpackage.Gebruiker;
 import Examenpackage.Gebruikerslijst;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args){
