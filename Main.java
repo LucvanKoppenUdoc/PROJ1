@@ -40,11 +40,8 @@ public class Main {
 
         } else if (menuInput == 3) 
         {
-            //ArrayList<Gebruiker> lijstje = new ArrayList<Gebruiker>();
             Gebruiker gebruiker = new Gebruiker("Luc", 21095582, true);
-            //lijstje.add(gebruiker);
-            //Gebruikerslijst gebruikers = new Gebruikerslijst(lijstje);
-            //System.out.println(gebruikers);
+
         } else if (menuInput == 4) 
         {
 
