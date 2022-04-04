@@ -24,8 +24,6 @@ public class Gebruikerslijst {
         if (gebruiker.getNaam() == naam) {
             match = gebruiker;
         }
-
-
             }
         return match;
         }
@@ -37,8 +35,6 @@ public class Gebruikerslijst {
             if (gebruiker.getGebruikerNummer() == gebruikernummer) {
                 match = gebruiker;
             }
-
-
         }
         return match;
     }
