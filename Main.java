@@ -15,7 +15,19 @@ public class Main {
         //System.out.println(gebruikers);
         //System.out.println(gebruikers.getStudentOnGebruikerNummer(21095582));
 
-        System.out.println("Welkom bij het examen programma\n1:\tkeuze 1\n2: \tkeuze2\n3: \tkeuze3\n4: \tkeuze4");
+        String menu = "Menu
+        1) Lijst met examens
+        2) Lijst met studenten
+        3) Nieuwe student inschrijven
+        4) Student verwijderen
+        5) Examen afnemen
+        6) Is student geslaagd voor test?
+        7) Welke examens heeft student gehaald?
+        8) Welke student heeft de meeste examens gehaald?
+        0) Exit
+        Uw keuze:
+        ";
+        System.out.println(menu);
 
     }
 
