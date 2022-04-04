@@ -4,16 +4,10 @@ import Examenpackage.Gebruiker;
 import Examenpackage.Gebruikerslijst;
 import java.util.*;
 
-import javax.sound.midi.Soundbank;
-
 public class Main {
     public static void main(String[] args)
     {
-        ArrayList<Gebruiker> lijstje = new ArrayList<Gebruiker>();
-        Gebruiker gebruiker1 = new Gebruiker("Luc", 21095582, true);
-        lijstje.add(gebruiker1);
-        Gebruikerslijst gebruikers = new Gebruikerslijst(lijstje);
-
+        Scanner scanner = new Scanner(System.in);
         String menu = """
                 Menu
                 1) Lijst met examens
@@ -27,12 +21,10 @@ public class Main {
                 0) Exit
                 Uw keuze:""";
         int menuInput = 11;
-
-        while (menuInput > 9 || menuInput < 0) 
+        while (menuInput > 8 || menuInput < 0) 
         {
             try {
                 System.out.println(menu);
-                Scanner scanner = new Scanner(System.in);
                 menuInput = scanner.nextInt();  // Read user input
             } catch (Exception e) {
                 System.out.println("\nGraag cijfers in voegen!\n");
@@ -44,7 +36,11 @@ public class Main {
             
         } else if (menuInput == 2) 
         {
-
+            ArrayList<Gebruiker> lijstje = new ArrayList<Gebruiker>();
+            Gebruiker gebruiker = new Gebruiker("Luc", 21095582, true);
+            lijstje.add(gebruiker);
+            Gebruikerslijst gebruikers = new Gebruikerslijst(lijstje);
+            System.out.println(gebruikers);
         } else if (menuInput == 3) 
         {
 
@@ -68,6 +64,7 @@ public class Main {
             System.out.println("Programma sluit af");
             System.exit(0);
         }
+        scanner.close();
     }
 }
 

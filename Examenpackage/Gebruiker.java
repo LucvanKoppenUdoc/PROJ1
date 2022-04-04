@@ -23,6 +23,7 @@ public class Gebruiker {
     public void maakExamen(){
          if (admin == true) {
              Examen examen = new Examen("examen 1", 10);
+             System.out.println(examen);
          }
      }
 
