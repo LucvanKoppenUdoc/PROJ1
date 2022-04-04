@@ -14,6 +14,10 @@ public class Gebruiker {
         this.naam = naam;
         this.gebruikerNummer = gebruikerNummer;
         this.admin = admin;
+
+        ArrayList<Gebruiker> lijstje = new ArrayList<Gebruiker>();
+        lijstje.add(this);
+        Gebruikerslijst gebruikers = new Gebruikerslijst(lijstje);
     }
 
     public String getNaam() {

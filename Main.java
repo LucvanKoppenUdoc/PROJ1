@@ -31,7 +31,8 @@ public class Main {
             }
         }
         System.out.println("uw keuze is: " + menuInput);  // Output user input
-        if (menuInput == 1) 
+        if (menuInput == 1)
+
         {
             
         } else if (menuInput == 2) 
