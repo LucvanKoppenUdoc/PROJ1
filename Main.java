@@ -31,7 +31,7 @@ public class Main {
                     menuInput = scanner.nextInt();  // Read user input
                 } catch (Exception e) {
                     System.out.println("\nGraag cijfers invoegen!\n");
-                    Integer.toString(menuInput);
+                    menuInput = 11;
                 }
             }
             System.out.println("uw keuze is: " + menuInput);  // Output user input
