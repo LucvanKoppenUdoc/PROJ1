@@ -7,10 +7,14 @@ public class Gebruikerslijst {
     ///Nog toevoegen in UML klassendiagram
     private String teVerwijderenStudent;
 
-     public Gebruikerslijst(ArrayList<Gebruiker> gebruikersLijst, String teVerwijderenStudent){
+     public Gebruikerslijst(ArrayList<Gebruiker> gebruikersLijst){
          this.gebruikersLijst = gebruikersLijst;
-         this.teVerwijderenStudent = teVerwijderenStudent;
      }
+
+     public Gebruikerslijst(ArrayList<Gebruiker> gebruikersLijst, String teVerwijderenStudent){
+        this(gebruikersLijst);
+        this.teVerwijderenStudent = teVerwijderenStudent;
+    }
 
      //Nog toevoegen in UML Klassendiagram
      //Nog uitwerken

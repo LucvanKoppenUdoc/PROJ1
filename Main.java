@@ -25,7 +25,7 @@ public class Main {
 
             int menuInput = 11;
             System.out.println(menuInput);
-            while (menuInput > 8 || menuInput < 0 || menuInput == 11) {
+            while (menuInput > 8 || menuInput < 0) {
                 try {
                     System.out.println(menu);
                     menuInput = scanner.nextInt();  // Read user input
