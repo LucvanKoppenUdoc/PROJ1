@@ -49,12 +49,17 @@ public class Main {
             } else if (menuInput == 4) {
                 //verwerken in gebruikerslijst
                 //gebruik menuinput 2: gebruikerslijst printen
-                System.out.println("Welke student wilt u verwijder?");
-                // scanner.nextLine();
-                String studentVerwijderen = scanner.nextLine();
-                System.out.println(studentVerwijderen);
-
-
+                String studentVerwijderen = "";
+                while (!(studentVerwijderen instanceof java.lang.String) && !(studentVerwijderen.isEmpty())) {
+                    try {
+                    System.out.println("Welke student wilt u verwijder?");
+                    scanner.nextLine();
+                    studentVerwijderen = scanner.nextLine();
+                    }
+                    catch (InputMismatchException e) {
+                        System.out.println("\nGraag een naam invoeren\n");
+                    }
+                }
             } else if (menuInput == 5) {
 
             } else if (menuInput == 6) {
