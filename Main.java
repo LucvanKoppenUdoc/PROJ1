@@ -24,7 +24,6 @@ public class Main {
                     Uw keuze:""";
 
             int menuInput = 11;
-            System.out.println(menuInput);
             while (menuInput > 8 || menuInput < 0) {
                 try {
                     System.out.println(menu);
