@@ -66,16 +66,17 @@ public class Main {
                 Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput, adminChoise);
 
             } else if (menuInput == 4) {
-                //verwerken in gebruikerslijst
                 //gebruik menuinput 2: gebruikerslijst printen
-                String studentVerwijderen = "";
-                while ((studentVerwijderen instanceof java.lang.String) && !(studentVerwijderen.isEmpty())) {
+                while (true) {
                     try {
-                    System.out.println("Welke student wilt u verwijder?");
+                    System.out.println("Welke student wilt u verwijderen?");
                     scanner.nextLine();
-                    studentVerwijderen = scanner.nextLine();
+                    String studentVerwijderen = scanner.nextLine();
+                    //input verwerken in gebruikerslijst??
+                    break;
                     }
-                    catch (InputMismatchException e) {
+                    // Catch werkt niet
+                    catch (Exception e) {
                         System.out.println("\nGraag een naam invoeren\n");
                     }
                 }
