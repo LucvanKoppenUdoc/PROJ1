@@ -11,8 +11,6 @@ public class Main {
         Examenlijst examenlijst = new Examenlijst();
         Examen examen = new Examen("Kaas", 10, examenlijst );
 
-        System.out.println(examenlijst);
-        System.exit(0);
         while (true) {
 
             String menu = """
@@ -40,7 +38,7 @@ public class Main {
             }
             System.out.println("uw keuze is: " + menuInput);  // Output user input
             if (menuInput == 1) {
-                //System.out.println(Examenlijst.getExamenlijst());
+                System.out.println(examenlijst);
             } else if (menuInput == 2) {
 
             } else if (menuInput == 3) {
