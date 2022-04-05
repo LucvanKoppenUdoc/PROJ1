@@ -59,7 +59,7 @@ public class Main {
                         }
                         break;
                     } else {
-                        System.out.println("Graag een 'y' of 'n' geven");
+                        System.out.println("Graag een 'y/Y' of 'n/N' geven");
                     }
                 }
                 Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput, adminChoise);
