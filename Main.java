@@ -30,7 +30,8 @@ public class Main {
                     System.out.println(menu);
                     menuInput = scanner.nextInt();  // Read user input
                 } catch (Exception e) {
-                    System.out.println("\nGraag cijfers in voegen!\n");
+                    System.out.println("\nGraag cijfers invoegen!\n");
+                    Integer.toString(menuInput);
                 }
             }
             System.out.println("uw keuze is: " + menuInput);  // Output user input
