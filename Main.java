@@ -32,13 +32,13 @@ public class Main {
                     Uw keuze:""";
 
             int menuInput = 11;
-            System.out.println(menuInput);
             while (menuInput > 8 || menuInput < 0) {
                 try {
                     System.out.println(menu);
                     menuInput = scanner.nextInt();  // Read user input
-                } catch (Exception e) {
-                    System.out.println("\nGraag cijfers in voegen!\n");
+                } catch (InputMismatchException e) {
+                    System.out.println("\nGraag cijfers invoegen\n");
+                    scanner.next();
                 }
             }
             System.out.println("uw keuze is: " + menuInput);  // Output user input
@@ -65,7 +65,7 @@ System.out.println(Examenlijst.getExamenlijst());
 
             } else if (menuInput == 0) {
                 System.out.println("Programma sluit af...");
-                System.exit(0);
+                break;
             }
         }
     }
