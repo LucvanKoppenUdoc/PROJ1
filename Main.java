@@ -29,8 +29,8 @@ public class Main {
                 try {
                     System.out.println(menu);
                     menuInput = scanner.nextInt();  // Read user input
-                } catch (Exception e) {
-                    System.out.println("Graag cijfers invoegen!\n");
+                } catch (InputMismatchException e) {
+                    System.out.println("\nGraag cijfers invoegen\n");
                     scanner.next();
                 }
             }
@@ -58,7 +58,7 @@ public class Main {
 
             } else if (menuInput == 0) {
                 System.out.println("Programma sluit af...");
-                System.exit(0);
+                break;
             }
         }
     }
