@@ -4,10 +4,18 @@ import java.util.*;
 
 public class Gebruikerslijst {
     private ArrayList<Gebruiker> gebruikersLijst = new ArrayList<Gebruiker>();
+    ///Nog toevoegen in UML klassendiagram
+    private String teVerwijderenStudent;
 
-
-     public Gebruikerslijst(ArrayList<Gebruiker> gebruikersLijst){
+     public Gebruikerslijst(ArrayList<Gebruiker> gebruikersLijst, String teVerwijderenStudetn){
          this.gebruikersLijst = gebruikersLijst;
+         this.teVerwijderenStudent = teVerwijderenStudent;
+     }
+
+     //Nog toevoegen in UML Klassendiagram
+     //Nog uitwerken
+     public void verwijderStudent(ArrayList<Gebruiker> gebruikersLijst){
+        gebruikersLijst.remove(teVerwijderenStudent);
      }
 
      public Integer getAantalStudenten() {

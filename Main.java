@@ -39,10 +39,14 @@ public class Main {
             } else if (menuInput == 2) {
 
             } else if (menuInput == 3) {
+                //Scanner gebruiken voor input
+                //fout in gebruiker.java oplossen
                 Gebruiker gebruiker = new Gebruiker("Luc", 21095582, true);
 
             } else if (menuInput == 4) {
-
+                //verwerken in gebruikerslijst
+                System.out.println("Welke student wilt u verwijder?");
+                String studentVerwijderen = scanner.nextLine();
             } else if (menuInput == 5) {
 
             } else if (menuInput == 6) {
@@ -52,7 +56,7 @@ public class Main {
             } else if (menuInput == 8) {
 
             } else if (menuInput == 0) {
-                System.out.println("Programma sluit af");
+                System.out.println("Programma sluit af...");
                 System.exit(0);
             }
         }
