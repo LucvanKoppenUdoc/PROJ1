@@ -28,9 +28,6 @@ public class Main {
                 try {
                     System.out.println(menu);
                     menuInput = scanner.nextInt();  // Read user input
-                    if (menuInput < 0 || menuInput > 8 ){
-                        System.out.println("\nGraag goede cijfers invullen!\n");
-                    }
                 } catch (InputMismatchException e) {
                     System.out.println("\nGraag cijfers invoegen\n");
                     scanner.next();
