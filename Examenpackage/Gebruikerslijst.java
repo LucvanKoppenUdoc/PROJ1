@@ -15,11 +15,11 @@ public class Gebruikerslijst {
         this(gebruikersLijst);
         this.teVerwijderenStudent = teVerwijderenStudent;
     }
-
      //Nog toevoegen in UML Klassendiagram
      //Nog uitwerken
      public void verwijderStudent(ArrayList<Gebruiker> gebruikersLijst){
         gebruikersLijst.remove(teVerwijderenStudent);
+
      }
 
      public Integer getAantalStudenten() {

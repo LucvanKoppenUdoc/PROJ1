@@ -1,7 +1,9 @@
 
 
 import Examenpackage.Gebruiker;
-import Examenpackage.Gebruikerslijst;
+import Examenpackage.*;
+
+import java.io.OutputStream;
 import java.util.*;
 
 public class Main {
@@ -39,9 +41,26 @@ public class Main {
             } else if (menuInput == 2) {
 
             } else if (menuInput == 3) {
-                //Scanner gebruiken voor input
-                //fout in gebruiker.java oplossen
-                Gebruiker gebruiker = new Gebruiker("Luc", 21095582, true);
+                System.out.println("Geef de naam: ");
+                scanner.nextLine();
+                String naamInput = scanner.nextLine();
+                System.out.println("Geef het studentennummer: ");
+                int stNmrInput = scanner.nextInt();
+                scanner.nextLine();
+                boolean adminChoise = false;
+                while (true) {
+                    System.out.println("Is dit een docent (y/n)");
+                    String adminInput = scanner.nextLine().toUpperCase();
+                    if (adminInput.equals("Y") || adminInput.equals("N")){
+                        if (adminInput.equals("Y")) {
+                            adminChoise = true;
+                        }
+                        break;
+                    } else {
+                        System.out.println("Graag een 'y' of 'n' geven");
+                    }
+                }
+                Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput, adminChoise);
 
             } else if (menuInput == 4) {
                 //verwerken in gebruikerslijst
