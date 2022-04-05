@@ -50,7 +50,7 @@ public class Main {
                 //verwerken in gebruikerslijst
                 //gebruik menuinput 2: gebruikerslijst printen
                 String studentVerwijderen = "";
-                while (!(studentVerwijderen instanceof java.lang.String) && !(studentVerwijderen.isEmpty())) {
+                while ((studentVerwijderen instanceof java.lang.String) && !(studentVerwijderen.isEmpty())) {
                     try {
                     System.out.println("Welke student wilt u verwijder?");
                     scanner.nextLine();
