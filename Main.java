@@ -1,9 +1,6 @@
 
 
-import Examenpackage.Examen;
-import Examenpackage.Examenlijst;
-import Examenpackage.Gebruiker;
-import Examenpackage.Gebruikerslijst;
+import Examenpackage.*;
 import java.util.*;
 
 public class Main {
@@ -43,7 +40,7 @@ public class Main {
             }
             System.out.println("uw keuze is: " + menuInput);  // Output user input
             if (menuInput == 1) {
-System.out.println(Examenlijst.getExamenlijst());
+                //System.out.println(Examenlijst.getExamenlijst());
             } else if (menuInput == 2) {
 
             } else if (menuInput == 3) {
