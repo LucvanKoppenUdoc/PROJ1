@@ -32,7 +32,6 @@ public class Main {
                 } catch (Exception e) {
                     System.out.println("\nGraag cijfers invoegen!\n");
                     menuInput = 11;
-                    continue;
                 }
             }
             System.out.println("uw keuze is: " + menuInput);  // Output user input
