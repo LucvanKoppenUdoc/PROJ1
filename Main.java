@@ -48,8 +48,12 @@ public class Main {
 
             } else if (menuInput == 4) {
                 //verwerken in gebruikerslijst
+                //gebruik menuinput 2: gebruikerslijst printen
                 System.out.println("Welke student wilt u verwijder?");
+                scanner.next();
                 String studentVerwijderen = scanner.nextLine();
+                System.out.println(studentVerwijderen);
+
             } else if (menuInput == 5) {
 
             } else if (menuInput == 6) {
