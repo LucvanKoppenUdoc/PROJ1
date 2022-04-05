@@ -2,14 +2,16 @@
 
 import Examenpackage.Gebruiker;
 import Examenpackage.*;
-
-import java.io.OutputStream;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
+
+        Examenlijst examenlijst = new Examenlijst();
+        Examen examen = new Examen("Kaas", 10, examenlijst );
+
         while (true) {
 
             String menu = """
@@ -37,7 +39,7 @@ public class Main {
             }
             System.out.println("uw keuze is: " + menuInput);  // Output user input
             if (menuInput == 1) {
-
+                System.out.println(examenlijst);
             } else if (menuInput == 2) {
 
             } else if (menuInput == 3) {
@@ -64,8 +66,13 @@ public class Main {
 
             } else if (menuInput == 4) {
                 //verwerken in gebruikerslijst
+                //gebruik menuinput 2: gebruikerslijst printen
                 System.out.println("Welke student wilt u verwijder?");
+                // scanner.nextLine();
                 String studentVerwijderen = scanner.nextLine();
+                System.out.println(studentVerwijderen);
+
+
             } else if (menuInput == 5) {
 
             } else if (menuInput == 6) {

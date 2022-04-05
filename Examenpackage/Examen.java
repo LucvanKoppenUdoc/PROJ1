@@ -9,9 +9,11 @@ public class Examen {
     private ArrayList<Vraag> vragen = new ArrayList<Vraag>();
     private Integer teBehalenPunten;
     
-    public Examen(String naam, Integer teBehalenPunten){
+    public Examen(String naam, Integer teBehalenPunten, Examenlijst examenlijst){
         this.naam = naam;
         this.teBehalenPunten = teBehalenPunten;
+
+        examenlijst.addExamen(this);
     }
 
     public String getNaam() {
