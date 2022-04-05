@@ -38,6 +38,7 @@ public class Main {
                 }
             }
             System.out.println("uw keuze is: " + menuInput);  // Output user input
+            
             if (menuInput == 1) {
                 System.out.println(examenlijst);
             } else if (menuInput == 2) {
