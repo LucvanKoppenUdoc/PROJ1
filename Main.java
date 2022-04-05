@@ -44,26 +44,8 @@ public class Main {
             } else if (menuInput == 2) {
 
             } else if (menuInput == 3) {
-                System.out.println("Geef de naam: ");
-                scanner.nextLine();
-                String naamInput = scanner.nextLine();
-                System.out.println("Geef het studentennummer: ");
-                int stNmrInput = scanner.nextInt();
-                scanner.nextLine();
-                boolean adminChoise = false;
-                while (true) {
-                    System.out.println("Is dit een docent (y/n)");
-                    String adminInput = scanner.nextLine().toUpperCase();
-                    if (adminInput.equals("Y") || adminInput.equals("N")){
-                        if (adminInput.equals("Y")) {
-                            adminChoise = true;
-                        }
-                        break;
-                    } else {
-                        System.out.println("Graag een 'y/Y' of 'n/N' geven");
-                    }
-                }
-                Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput, adminChoise);
+                GegevensVerkrijgen(scanner);
+
 
             } else if (menuInput == 4) {
                 //gebruik menuinput 2: gebruikerslijst printen
@@ -93,6 +75,38 @@ public class Main {
                 break;
             }
         }
+    }
+
+    private static void GegevensVerkrijgen(Scanner scanner) {
+        System.out.println("Geef de naam: ");
+        scanner.nextLine();
+        String naamInput = scanner.nextLine();
+        while (true){
+            try{
+                System.out.println("Geef het studentennummer: ");
+                int stNmrInput = scanner.nextInt();
+                scanner.nextLine();
+                boolean adminChoise = false;
+                while (true) {
+                    System.out.println("Is dit een docent (y/n)");
+                    String adminInput = scanner.nextLine().toUpperCase();
+                    if (adminInput.equals("Y") || adminInput.equals("N")){
+                        if (adminInput.equals("Y")) {
+                            adminChoise = true;
+                        }
+                        break;
+                    } else {
+                        System.out.println("Graag een 'y' of 'n' geven");
+                    }
+                    Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput, adminChoise);
+                }
+                break;
+            } catch (Exception e) {
+                System.out.println("Graag cijfers gebruiken");
+                scanner.next();
+            }
+        }
+
     }
 }
 
