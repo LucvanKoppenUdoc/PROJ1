@@ -24,12 +24,12 @@ public class Gebruiker {
         return naam;
     }
 
-    public void maakExamen(){
-         if (admin == true) {
-             Examen examen = new Examen("examen 1", 10);
-             System.out.println(examen);
-         }
-     }
+//    public void maakExamen(){
+//         if (admin == true) {
+//             Examen examen = new Examen("examen 1", 10, Examenlijst examenlijst);
+//             System.out.println(examen);
+//         }
+//     }
 
     public Integer getGebruikerNummer() {
         return gebruikerNummer;
