@@ -20,7 +20,7 @@ public class Main {
 
         Inlog(scanner, gebruiker);
 
-        //Vragen
+        //Examenvragen
         ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
         keuzeAntwoorden.add("1 aap");
         keuzeAntwoorden.add("2 poes");
