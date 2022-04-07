@@ -17,9 +17,7 @@ public class Examen {
         examenlijst.add(this);
     }
 
-    public String getNaam() {
-        return naam;
-    }
+    public String getNaam() {return naam; }
 
     public ArrayList<Gebruiker> getStudentGeslaagd() {
         return studentenGeslaagd;
@@ -29,9 +27,7 @@ public class Examen {
         this.studentenGeslaagd = studentGeslaagd;
     }
 
-    public void addStudentGeslaagd(Gebruiker studentGeslaagd) {
-        this.studentenGeslaagd.add(studentGeslaagd);
-    }
+    public void addStudentGeslaagd(Gebruiker studentGeslaagd) { this.studentenGeslaagd.add(studentGeslaagd); }
 
     public ArrayList<Vraag> getVragen() {
         return vragen;
@@ -51,9 +47,15 @@ public class Examen {
 
     @Override
     public String toString() {
+        ArrayList<Integer> test = new ArrayList<Integer>();
+        for (Gebruiker gebruiker : getStudentGeslaagd()){
+            test.add(gebruiker.getGebruikerNummer());
+        }
+
         return  "Examen " + naam +
-                "\nStudentenGeslaagd = " + studentenGeslaagd +
+                "\nStudenten Geslaagd = " + test +
+                "\nAantal Studenten Geslaagd = " + test.size() +
                 "\nVragen = " + vragen.size() +
-                "\nTebehalenpunten = " + teBehalenPunten + "\n";
+                "\nTe behalen punten = " + teBehalenPunten + "\n";
     }
 }
