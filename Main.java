@@ -1,3 +1,5 @@
+
+
 import Examenpackage.Gebruiker;
 import Examenpackage.*;
 import java.util.*;
@@ -8,6 +10,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         //Examens
         Examen examen = new Examen("Nederlands", 10);
+        Examen examen1 = new Examen("Frans", 10);
+
         //Gebruikers
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
         Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943,
@@ -90,13 +94,13 @@ public class Main {
                 gebruikerVerwijderen(scanner, gebruiker);
 
             } else if (menuInput == 5) {
-                examenAfnemen();
+                examenAfnemen(scanner);
 
             } else if (menuInput == 6 && ingelogdeUser.getAdmin()) {
                 studentGeslaagd(scanner);
 
             } else if (menuInput == 7 && ingelogdeUser.getAdmin()) {
-                studentGemaakt();
+                studentExamenGemaakt();
 
             } else if (menuInput == 8 && ingelogdeUser.getAdmin()) {
                 meesteExamensGehaald();
@@ -184,12 +188,25 @@ public class Main {
             }
         }
     }
-    private static void examenAfnemen(){
-        while(true){
+    private static void examenAfnemen(Scanner scanner){
+        while(true) {
+            int getal = 1;
             for (Examen examen : Examen.getExamenlijst()) {
-                System.out.println(examen.getNaam());
+                System.out.println(getal++ + ") " + examen.getNaam());
             }
-            break;
+            System.out.println("Keuze:");
+            try {
+                int examenKeuze = scanner.nextInt();
+                if (examenKeuze > 0 && (examenKeuze-1) < Examen.getExamenlijst().size()) {
+                    System.out.println("Goede keuze");
+                    break;
+                } else {
+                    System.out.println("Graag goede cijfers invoeren");
+                }
+            } catch (Exception e) {
+                System.out.println("Graag alleen cijfers in voeren");
+                scanner.next();
+            }
         }
     }
     private static void studentGeslaagd(Scanner scanner){
@@ -208,7 +225,7 @@ public class Main {
             }
         }
     }
-    private static void studentGemaakt(){
+    private static void studentExamenGemaakt(){
         System.out.println("hallo");
     }
     private static void meesteExamensGehaald(){
