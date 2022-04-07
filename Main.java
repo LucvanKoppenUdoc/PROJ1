@@ -19,8 +19,15 @@ public class Main {
 
         Inlog(scanner, gebruiker);
 
-        Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
+        //Vragen
+        Vraag vraag = new Vraag("Wat is de bijnaam voor Roy?", "D");
+        Vraag vraag1 = new Vraag("Hoevaak is Roy opkomen dagen?", "C");
+        Vraag vraag2 = new Vraag("Hoeveel heeft Roy aan dit project gedaan?", "A");
+        Vraag vraag3 = new Vraag("Houd Daniels moeder van Daniel?", "C");
+        Vraag vraag4 = new Vraag("Hoeveel likes heeft Daniel op Tinder?", "B");
         
+        Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
+
         while (true) {
             String menu = """
                     Menu
