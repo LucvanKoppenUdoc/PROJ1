@@ -44,8 +44,7 @@ public class Main {
             } else if (menuInput == 2) {
 
             } else if (menuInput == 3) {
-                GegevensVerkrijgen(scanner);
-
+                MenuOptie3(scanner);
 
             } else if (menuInput == 4) {
                 //gebruik menuinput 2: gebruikerslijst printen
@@ -77,7 +76,7 @@ public class Main {
         }
     }
 
-    private static void GegevensVerkrijgen(Scanner scanner) {
+    private static void MenuOptie3(Scanner scanner) {
         System.out.println("Geef de naam: ");
         scanner.nextLine();
         String naamInput = scanner.nextLine();
