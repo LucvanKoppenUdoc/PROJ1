@@ -34,6 +34,8 @@ public class Gebruiker {
 
     public String getWachtwoord() {return wachtwoord;}
 
+    public Boolean getAdmin() {return admin;}
+
     public Gebruiker getGebruikerOnGebruikerNummer(int gebruikernummer) {
         Gebruiker match = null;
         for (Gebruiker gebruiker : gebruikerslijst){

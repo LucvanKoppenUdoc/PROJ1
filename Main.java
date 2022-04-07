@@ -12,9 +12,10 @@ public class Main {
 
         //Gebruikers
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
-        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord", true);
+        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943,
+                "Wachtwoord", true);
         Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", true);
-        Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", true);
+        Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
 
         Inlog(scanner, gebruiker);
@@ -34,7 +35,7 @@ public class Main {
 
         
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
-
+        System.out.println(ingelogdeUser);
         while (true) {
             String menu = """
                     Menu
@@ -52,7 +53,7 @@ public class Main {
             while (menuInput > 8 || menuInput < 0) {
                 try {
                     System.out.println(menu);
-                    menuInput = scanner.nextInt();  // Read user input
+                    menuInput = scanner.nextInt();
                 } catch (InputMismatchException e) {
                     System.out.println("\nGraag cijfers invoegen\n");
                     scanner.next();
@@ -63,32 +64,34 @@ public class Main {
                     System.out.println(Examen.getExamenlijst().get(i));
                 }
 
-            } else if (menuInput == 2) {
+            } else if (menuInput == 2 && ingelogdeUser.getAdmin()) {
                 for (int i = 0; i < gebruiker.getGebruikersLijst().size(); i++) {
                     System.out.println(gebruiker.getGebruikersLijst().get(i));
                 }
 
-            } else if (menuInput == 3) {
+            } else if (menuInput == 3 && ingelogdeUser.getAdmin()) {
                 menuOptieDrie(scanner);
 
-            } else if (menuInput == 4) {
+            } else if (menuInput == 4 && ingelogdeUser.getAdmin()) {
                 menuOptieVier(scanner, gebruiker);
 
             } else if (menuInput == 5) {
                 MenuOptieVijf();
 
-            } else if (menuInput == 6) {
+            } else if (menuInput == 6 && ingelogdeUser.getAdmin()) {
                 studentGeslaagd(scanner);
 
-            } else if (menuInput == 7) {
+            } else if (menuInput == 7 && ingelogdeUser.getAdmin()) {
                 menuOptieZeven();
 
-            } else if (menuInput == 8) {
+            } else if (menuInput == 8 && ingelogdeUser.getAdmin()) {
                 menuOptieAcht();
 
             } else if (menuInput == 0) {
                 System.out.println("Programma sluit af...");
                 break;
+            } else {
+                System.out.println("\nJe hebt hier geen rechten voor!\n");
             }
         }
     }
