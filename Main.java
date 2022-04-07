@@ -6,12 +6,24 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
+
+        //Examens
         Examen examen = new Examen("Nederlands", 10);
+
+        //Gebruikers
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
         Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord", true);
         Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", true);
         Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", true);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
+
+
+        //Vragen
+        Vraag vraag = new Vraag("Wat is de bijnaam voor Roy?", "D");
+        Vraag vraag1 = new Vraag("Hoevaak is Roy opkomen dagen?", "C");
+        Vraag vraag2 = new Vraag("Hoeveel heeft Roy aan dit project gedaan?", "A");
+        Vraag vraag3 = new Vraag("Houd Daniels moeder van Daniel?", "C");
+        Vraag vraag4 = new Vraag("Hoeveel likes heeft Daniel op Tinder?", "B");
 
         Inlog(scanner, gebruiker);
 
