@@ -10,7 +10,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         Examenlijst examenlijst = new Examenlijst();
-        Examen examen = new Examen("Kaas", 10, examenlijst );
+        Examen examen = new Examen("Nederlands", 10, examenlijst );
+        Gebruiker gebruiker = new Gebruiker("Luc", 21095582, true);
+
 
         while (true) {
 
@@ -38,29 +40,19 @@ public class Main {
                 }
             }
             System.out.println("uw keuze is: " + menuInput);  // Output user input
-            
+
             if (menuInput == 1) {
                 System.out.println(examenlijst);
+
             } else if (menuInput == 2) {
+                System.out.println(gebruiker.getGebruikersLijst());
 
             } else if (menuInput == 3) {
-                MenuOptie3(scanner);
+                GegevensVerkrijgen(scanner);
 
             } else if (menuInput == 4) {
-                //gebruik menuinput 2: gebruikerslijst printen
-                while (true) {
-                    try {
-                    System.out.println("Welke student wilt u verwijderen?");
-                    scanner.nextLine();
-                    String studentVerwijderen = scanner.nextLine();
-                    //input verwerken in gebruikerslijst??
-                    break;
-                    }
-                    // Catch werkt niet
-                    catch (Exception e) {
-                        System.out.println("\nGraag een naam invoeren\n");
-                    }
-                }
+                MenuOptie4(scanner, gebruiker);
+
             } else if (menuInput == 5) {
 
             } else if (menuInput == 6) {
@@ -76,7 +68,8 @@ public class Main {
         }
     }
 
-    private static void MenuOptie3(Scanner scanner) {
+
+    private static void GegevensVerkrijgen(Scanner scanner) {
         System.out.println("Geef de naam: ");
         scanner.nextLine();
         String naamInput = scanner.nextLine();
@@ -97,8 +90,8 @@ public class Main {
                     } else {
                         System.out.println("Graag een 'y' of 'n' geven");
                     }
-                    Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput, adminChoise);
                 }
+                Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput, adminChoise);
                 break;
             } catch (Exception e) {
                 System.out.println("Graag cijfers gebruiken");
@@ -106,6 +99,26 @@ public class Main {
             }
         }
 
+    }
+    private static void MenuOptie4(Scanner scanner, Gebruiker gebruiker) {
+        while (true) {
+            try {
+                System.out.println("Welke student wilt u verwijderen?");
+                scanner.nextLine();
+                String studentNaam = scanner.nextLine();
+                if (gebruiker.verwijderStudent(studentNaam)) {
+                    System.out.println(studentNaam + " is succesvol verwijderd");
+                    break;
+                } else {
+                    System.out.println("Er is iets fout gegaan, check uw spelling, druk op enter en probeer het opnieuw");
+                }
+
+            }
+            // Catch werkt niet
+            catch (Exception e) {
+                System.out.println(e);
+            }
+        }
     }
 }
 
