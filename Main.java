@@ -1,5 +1,3 @@
-
-
 import Examenpackage.Gebruiker;
 import Examenpackage.*;
 import java.util.*;
@@ -12,10 +10,7 @@ public class Main {
         Examenlijst examenlijst = new Examenlijst();
         Examen examen = new Examen("Nederlands", 10, examenlijst );
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, true);
-
-
         while (true) {
-
             String menu = """
                     Menu
                     1) Lijst met examens
@@ -28,7 +23,6 @@ public class Main {
                     8) Welke student heeft de meeste examens gehaald?
                     0) Exit
                     Uw keuze:""";
-
             int menuInput = 11;
             while (menuInput > 8 || menuInput < 0) {
                 try {
@@ -40,7 +34,6 @@ public class Main {
                 }
             }
             System.out.println("uw keuze is: " + menuInput);  // Output user input
-
             if (menuInput == 1) {
                 System.out.println(examenlijst);
 
@@ -68,7 +61,6 @@ public class Main {
             }
         }
     }
-
 
     private static void GegevensVerkrijgen(Scanner scanner) {
         System.out.println("Geef de naam: ");
@@ -99,7 +91,6 @@ public class Main {
                 scanner.next();
             }
         }
-
     }
     private static void MenuOptie4(Scanner scanner, Gebruiker gebruiker) {
         scanner.nextLine();
@@ -113,7 +104,6 @@ public class Main {
                 } else {
                     System.out.println("Er is iets fout gegaan, check uw spelling, druk op enter en probeer het opnieuw");
                 }
-
             }
             catch (Exception e) {
                 System.out.println(e);
