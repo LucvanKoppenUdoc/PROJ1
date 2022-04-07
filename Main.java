@@ -15,7 +15,7 @@ public class Main {
         while (true) {
             System.out.println("Wat is je gebruikerNummer?");
                 String gebruikerNummer = scanner.nextInt();
-            System.out.rpintln("Wat is je wachtwoord?");
+            System.out.println("Wat is je wachtwoord?");
             // if (getGebruikerOnGebruikerNummer().getWachtwoord.equals(scanner.nextInt()))
         }
         while (true) {
