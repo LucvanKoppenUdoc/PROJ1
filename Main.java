@@ -12,7 +12,7 @@ public class Main {
         Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", true);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
 
-        Inlog(scanner, gebruiker);
+        Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
 
         while (true) {
             String menu = """
@@ -72,11 +72,12 @@ public class Main {
         }
     }
 
-    private static void Inlog(Scanner scanner, Gebruiker gebruiker) {
+    private static Gebruiker Inlog(Scanner scanner, Gebruiker gebruiker) {
+        int gebruikerNummer = 0;
         while (true) {
             try {
                 System.out.println("Wat is je studentnummer?");
-                int gebruikerNummer = scanner.nextInt();
+                gebruikerNummer = scanner.nextInt();
                 System.out.println("Wat is je wachtwoord?");
                 scanner.nextLine();
                 String wachtwoordInput = scanner.nextLine();
@@ -84,6 +85,7 @@ public class Main {
                     break;
                 } else {
                     System.out.println("Verkeerder inlog probeer opnieuw!\n");
+
                 }
             } catch (Exception e) {
                 System.out.println("Graag alleen cijfers gebruiken\n");
@@ -91,6 +93,7 @@ public class Main {
             }
 
         }
+        return gebruiker.getGebruikerOnGebruikerNummer(gebruikerNummer);
     }
 
     private static void menuOptieDrie(Scanner scanner) {
@@ -135,7 +138,8 @@ public class Main {
                     System.out.println(studentNaam + " is succesvol verwijderd");
                     break;
                 } else {
-                    System.out.println("Er is iets fout gegaan, check uw spelling, druk op enter en probeer het opnieuw");
+                    System.out.println("Er is iets fout gegaan, check uw spelling, druk op enter en probeer het " +
+                            "opnieuw");
                 }
             }
             catch (Exception e) {
