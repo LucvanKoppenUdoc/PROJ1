@@ -10,6 +10,7 @@ public class Vraag {
     public Vraag(String vraagstelling, Integer goedAntwoord){
         this.vraagstelling = vraagstelling;
         this.goedAntwoord = goedAntwoord;
+        this.keuzeAntwoorden = keuzeAntwoorden;
     }
 
     public String getVraagstelling() {
