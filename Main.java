@@ -16,7 +16,7 @@ public class Main {
             System.out.println("Wat is je gebruikerNummer?");
                 String gebruikerNummer = scanner.nextInt();
             System.out.rpintln("Wat is je wachtwoord?");
-            if (getGebruikerOnGebruikerNummer().getWachtwoord.equals(scanner.nextInt()))
+            // if (getGebruikerOnGebruikerNummer().getWachtwoord.equals(scanner.nextInt()))
         }
         while (true) {
             String menu = """
@@ -85,6 +85,9 @@ public class Main {
                 System.out.println("Geef het studentennummer: ");
                 int stNmrInput = scanner.nextInt();
                 scanner.nextLine();
+                System.out.println("Geef het wachtwoord: ");
+                String stWwInput = scanner.nextInt();
+                scanner.nextLine();
                 boolean adminChoise = false;
                 while (true) {
                     System.out.println("Is dit een docent (y/n)");
@@ -98,7 +101,7 @@ public class Main {
                         System.out.println("Graag een 'y' of 'n' geven");
                     }
                 }
-                Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput, adminChoise);
+                Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput,stWwInput, adminChoise);
                 break;
             } catch (Exception e) {
                 System.out.println("Graag cijfers gebruiken");
