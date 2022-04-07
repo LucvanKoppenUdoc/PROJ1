@@ -31,6 +31,7 @@ public class Main {
         Vraag vraag3 = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
         Vraag vraag4 = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
 
+        //TEST
         // System.out.println(examen.getVragen());
 
         
