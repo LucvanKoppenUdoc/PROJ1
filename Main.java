@@ -179,8 +179,7 @@ public class Main {
                     System.out.println(studentNaam + " is succesvol verwijderd");
                     break;
                 } else {
-                    System.out.println("Er is iets fout gegaan, check uw spelling, druk op enter en probeer het " +
-                            "opnieuw");
+                    System.out.println("Er is iets fout gegaan, check uw spelling");
                 }
             }
             catch (Exception e) {
