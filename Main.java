@@ -151,6 +151,7 @@ public class Main {
                 System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
                 String inputNaam = scanner.nextLine();
                 //if (gebruiker.)
+                break;
             }
             catch(Exception e){
                 System.out.println("Graag een naam invoeren!");
