@@ -20,6 +20,7 @@ public class Main {
 
         //Vragen
         ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
+<<<<<<< HEAD
         keuzeAntwoorden.add("1 aap");
         keuzeAntwoorden.add("2 poes");
         keuzeAntwoorden.add("3 hondje");
@@ -43,9 +44,34 @@ public class Main {
         keuzeAntwoorden4.add("1 1 meter 50");
         keuzeAntwoorden4.add("2 1 meter 20");
         keuzeAntwoorden4.add("3 Ja idd");
+=======
+        keuzeAntwoorden.add("1: aap");
+        keuzeAntwoorden.add("2: poes");
+        keuzeAntwoorden.add("3: hondje");
+        Vraag vraag = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+        ArrayList<String> keuzeAntwoorden1 = new ArrayList<String>();
+        keuzeAntwoorden1.add("1: Rikash");
+        keuzeAntwoorden1.add("2: Royalistic");
+        keuzeAntwoorden1.add("3: Gert");
+        Vraag vraag1 = new Vraag("Wat is Roy zijn bijnaam?", 1, keuzeAntwoorden1, examen);
+        ArrayList<String> keuzeAntwoorden2 = new ArrayList<String>();
+        keuzeAntwoorden2.add("1: 2");
+        keuzeAntwoorden2.add("2: 3");
+        keuzeAntwoorden2.add("3: 4");
+        Vraag vraag2 = new Vraag("Wat is 2+2?", 3, keuzeAntwoorden2, examen);
+        ArrayList<String> keuzeAntwoorden3 = new ArrayList<String>();
+        keuzeAntwoorden3.add("1: Delft");
+        keuzeAntwoorden3.add("2: Maassluis");
+        keuzeAntwoorden3.add("3: Arnhem");
+        Vraag vraag3 = new Vraag("Waar woont Daniel?", 2, keuzeAntwoorden3, examen);
+        ArrayList<String> keuzeAntwoorden4 = new ArrayList<String>();
+        keuzeAntwoorden4.add("1: 1 meter 50");
+        keuzeAntwoorden4.add("2: 1 meter 20");
+        keuzeAntwoorden4.add("3: Ja idd");
+>>>>>>> f780ac9d269c1e6a96f1b83c0699c771e0dfc2ca
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
         //TEST
-        //System.out.println(examen.getVragen());
+        System.out.println(examen.getVragen());
 
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
         System.out.println(ingelogdeUser);
@@ -119,7 +145,7 @@ public class Main {
                 scanner.nextLine();
                 String wachtwoordInput = scanner.nextLine();
                 if (gebruiker.getGebruikerOnGebruikerNummer(gebruikerNummer).getWachtwoord().equals(wachtwoordInput)) {
-                    System.out.println("hallo");
+                    System.out.println("Welkom!");
                     break;
                 } else {
                     System.out.println("Verkeerder inlog probeer opnieuw!\n");
