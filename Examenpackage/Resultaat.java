@@ -6,7 +6,7 @@ public class Resultaat {
     private Examen examen;
     private Gebruiker gebruiker;
     private double cijfer;
-    private ArrayList<Resultaat> alleResultaten = new ArrayList<Resultaat>();
+    public static ArrayList<Resultaat> alleResultaten = new ArrayList<Resultaat>();
     private boolean geslaagd;
 
 
