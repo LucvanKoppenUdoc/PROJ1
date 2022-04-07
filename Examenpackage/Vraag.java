@@ -30,7 +30,7 @@ public class Vraag {
     @Override
     public String toString() {
         return  "Vraag: " + vraagstelling + '\n' +
-                "goedAntwoord= " + goedAntwoord + "\n" +
-                "keuzeAntwoorden= " + keuzeAntwoorden + '\n';
+                "GoedAntwoord= " + goedAntwoord + "\n" +
+                "KeuzeAntwoorden= " + keuzeAntwoorden + '\n';
     }
 }
