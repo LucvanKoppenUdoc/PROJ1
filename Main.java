@@ -6,10 +6,8 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
-
         //Examens
         Examen examen = new Examen("Nederlands", 10);
-
         //Gebruikers
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
         Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943,
@@ -45,7 +43,7 @@ public class Main {
         keuzeAntwoorden4.add("3 Ja idd");
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
         //TEST
-        System.out.println(examen.getVragen());
+        //System.out.println(examen.getVragen());
 
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
         System.out.println(ingelogdeUser);
@@ -83,22 +81,22 @@ public class Main {
                 }
 
             } else if (menuInput == 3 && ingelogdeUser.getAdmin()) {
-                menuOptieDrie(scanner);
+                gebruikerToevoegen(scanner);
 
             } else if (menuInput == 4 && ingelogdeUser.getAdmin()) {
-                menuOptieVier(scanner, gebruiker);
+                gebruikerVerwijderen(scanner, gebruiker);
 
             } else if (menuInput == 5) {
-                MenuOptieVijf();
+                examenAfnemen();
 
             } else if (menuInput == 6 && ingelogdeUser.getAdmin()) {
                 studentGeslaagd(scanner);
 
             } else if (menuInput == 7 && ingelogdeUser.getAdmin()) {
-                menuOptieZeven();
+                studentGemaakt();
 
             } else if (menuInput == 8 && ingelogdeUser.getAdmin()) {
-                menuOptieAcht();
+                meesteExamensGehaald();
 
             } else if (menuInput == 0) {
                 System.out.println("Programma sluit af...");
@@ -123,18 +121,16 @@ public class Main {
                     break;
                 } else {
                     System.out.println("Verkeerder inlog probeer opnieuw!\n");
-
                 }
             } catch (Exception e) {
                 System.out.println("Graag alleen cijfers gebruiken\n");
                 scanner.next();
             }
-
         }
         return gebruiker.getGebruikerOnGebruikerNummer(gebruikerNummer);
     }
 
-    private static void menuOptieDrie(Scanner scanner) {
+    private static void gebruikerToevoegen(Scanner scanner) {
         System.out.println("Geef de naam: ");
         scanner.nextLine();
         String naamInput = scanner.nextLine();
@@ -166,7 +162,7 @@ public class Main {
             }
         }
     }
-    private static void menuOptieVier(Scanner scanner, Gebruiker gebruiker) {
+    private static void gebruikerVerwijderen(Scanner scanner, Gebruiker gebruiker) {
         scanner.nextLine();
         while (true) {
             try {
@@ -181,12 +177,11 @@ public class Main {
                 }
             }
             catch (Exception e) {
-                System.out.println(e);
                 scanner.next();
             }
         }
     }
-    private static void MenuOptieVijf(){
+    private static void examenAfnemen(){
         System.out.println("hallo");
     }
     private static void studentGeslaagd(Scanner scanner){
@@ -205,10 +200,10 @@ public class Main {
             }
         }
     }
-    private static void menuOptieZeven(){
+    private static void studentGemaakt(){
         System.out.println("hallo");
     }
-    private static void menuOptieAcht(){
+    private static void meesteExamensGehaald(){
         System.out.println("hallo");
     }
 }
