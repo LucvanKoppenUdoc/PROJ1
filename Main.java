@@ -8,15 +8,13 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Examen examen = new Examen("Nederlands", 10);
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "SpaceCake", true);
-        Gebruiker ingelogdeGebruiker = gebruiker;
-        Examen examen1 = new Examen("Nederlands", 10 );
-        Gebruiker gebruiker1 = new Gebruiker("Luc", 21095582, "IkBenLuc", true);
 
         while (true) {
             System.out.println("Wat is je gebruikerNummer?");
                 String gebruikerNummer = scanner.nextLine();
             System.out.println("Wat is je wachtwoord?");
             // if (getGebruikerOnGebruikerNummer().getWachtwoord.equals(scanner.nextInt()))
+            break;
         }
         while (true) {
             String menu = """
@@ -136,6 +134,7 @@ public class Main {
             try {
                 System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
                 String inputNaam = scanner.nextLine();
+                //if (gebruiker.)
             }
             catch(Exception e){
                 System.out.println("Graag een naam invoeren!");
