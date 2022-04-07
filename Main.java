@@ -54,6 +54,7 @@ public class Main {
                 MenuOptie4(scanner, gebruiker);
 
             } else if (menuInput == 5) {
+                MenuOptie5();
 
             } else if (menuInput == 6) {
 
@@ -118,5 +119,8 @@ public class Main {
                 System.out.println(e);
             }
         }
+    }
+    private static void MenuOptie5(){
+        System.out.println("menu optie 5");
     }
 }
