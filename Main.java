@@ -57,7 +57,7 @@ public class Main {
                 MenuOptieVijf();
 
             } else if (menuInput == 6) {
-                menuOptieZes(scanner);
+                studentGeslaagd(scanner);
 
             } else if (menuInput == 7) {
                 menuOptieZeven();
@@ -140,13 +140,14 @@ public class Main {
             }
             catch (Exception e) {
                 System.out.println(e);
+                scanner.next();
             }
         }
     }
     private static void MenuOptieVijf(){
         System.out.println("hallo");
     }
-    private static void menuOptieZes(Scanner scanner){
+    private static void studentGeslaagd(Scanner scanner){
         //nog afmaken
         scanner.nextLine();
         while (true) {
@@ -154,9 +155,11 @@ public class Main {
                 System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
                 String inputNaam = scanner.nextLine();
                 //if (gebruiker.)
+                break;
             }
             catch(Exception e){
                 System.out.println("Graag een naam invoeren!");
+                scanner.next();
             }
         }
     }
