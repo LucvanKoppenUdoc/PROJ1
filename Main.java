@@ -18,8 +18,6 @@ public class Main {
         Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
 
-        Inlog(scanner, gebruiker);
-
         //Vragen
         ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
         keuzeAntwoorden.add("1 aap");
@@ -48,9 +46,8 @@ public class Main {
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
 
         //TEST
-        // System.out.println(examen.getVragen());
+        //System.out.println(examen.getVragen());
 
-        
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
         System.out.println(ingelogdeUser);
         while (true) {
@@ -123,6 +120,7 @@ public class Main {
                 scanner.nextLine();
                 String wachtwoordInput = scanner.nextLine();
                 if (gebruiker.getGebruikerOnGebruikerNummer(gebruikerNummer).getWachtwoord().equals(wachtwoordInput)) {
+                    System.out.println("hallo");
                     break;
                 } else {
                     System.out.println("Verkeerder inlog probeer opnieuw!\n");
