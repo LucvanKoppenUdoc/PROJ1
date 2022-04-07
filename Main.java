@@ -9,24 +9,8 @@ public class Main {
         Examen examen = new Examen("Nederlands", 10);
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "SpaceCake", true);
 
-        while (true) {
-            try {
-                System.out.println("Wat is je studentnummer?");
-                int gebruikerNummer = scanner.nextInt();
-                System.out.println("Wat is je wachtwoord?");
-                scanner.nextLine();
-                String wachtwoordInput = scanner.nextLine();
-                if (gebruiker.getGebruikerOnGebruikerNummer(gebruikerNummer).getWachtwoord().equals(wachtwoordInput)) {
-                    break;
-                } else {
-                    System.out.println("Verkeerder inlog probeer opnieuw!\n");
-                }
-            } catch (Exception e) {
-                System.out.println("Graag alleen cijfers gebruiken\n");
-                scanner.next();
-            }
+        Inlog(scanner, gebruiker);
 
-        }
         while (true) {
             String menu = """
                     Menu
@@ -50,9 +34,10 @@ public class Main {
                     scanner.next();
                 }
             }
-            System.out.println("uw keuze is: " + menuInput);  // Output user input
             if (menuInput == 1) {
-                System.out.println(examen.examenlijst);
+                for (int i = 0; i < Examen.getExamenlijst().size(); i++) {
+                    System.out.println(Examen.getExamenlijst().get(i));
+                }
 
             } else if (menuInput == 2) {
                 for (int i = 0; i < gebruiker.getGebruikersLijst().size(); i++) {
@@ -69,7 +54,6 @@ public class Main {
                 MenuOptieVijf();
 
             } else if (menuInput == 6) {
-                /// nog afmaken
                 menuOptieZes(scanner);
 
             } else if (menuInput == 7) {
@@ -82,6 +66,27 @@ public class Main {
                 System.out.println("Programma sluit af...");
                 break;
             }
+        }
+    }
+
+    private static void Inlog(Scanner scanner, Gebruiker gebruiker) {
+        while (true) {
+            try {
+                System.out.println("Wat is je studentnummer?");
+                int gebruikerNummer = scanner.nextInt();
+                System.out.println("Wat is je wachtwoord?");
+                scanner.nextLine();
+                String wachtwoordInput = scanner.nextLine();
+                if (gebruiker.getGebruikerOnGebruikerNummer(gebruikerNummer).getWachtwoord().equals(wachtwoordInput)) {
+                    break;
+                } else {
+                    System.out.println("Verkeerder inlog probeer opnieuw!\n");
+                }
+            } catch (Exception e) {
+                System.out.println("Graag alleen cijfers gebruiken\n");
+                scanner.next();
+            }
+
         }
     }
 

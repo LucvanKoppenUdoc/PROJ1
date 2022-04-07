@@ -51,11 +51,9 @@ public class Examen {
 
     @Override
     public String toString() {
-        return "Examen{" +
-                "naam='" + naam + '\'' +
-                ", studentenGeslaagd=" + studentenGeslaagd +
-                ", vragen=" + vragen +
-                ", teBehalenPunten=" + teBehalenPunten +
-                '}';
+        return  "Examen " + naam +
+                "\nStudentenGeslaagd = " + studentenGeslaagd +
+                "\nVragen = " + vragen.size() +
+                "\nTebehalenpunten = " + teBehalenPunten + "\n";
     }
 }
