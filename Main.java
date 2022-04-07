@@ -8,43 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         //Examens
-        Examen examen = new Examen("Nederlands", 10);
-
-        //Gebruikers
-        Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
-        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943,
-                "Wachtwoord", true);
-        Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", true);
-        Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
-        examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
-
-        //Vragen
-        ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
-        keuzeAntwoorden.add("1 aap");
-        keuzeAntwoorden.add("2 poes");
-        keuzeAntwoorden.add("3 hondje");
-        Vraag vraag = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
-        ArrayList<String> keuzeAntwoorden1 = new ArrayList<String>();
-        keuzeAntwoorden1.add("1 Rikash");
-        keuzeAntwoorden1.add("2 Royalistic");
-        keuzeAntwoorden1.add("3 Gert");
-        Vraag vraag1 = new Vraag("Wat is Roy zijn bijnaam?", 1, keuzeAntwoorden1, examen);
-        ArrayList<String> keuzeAntwoorden2 = new ArrayList<String>();
-        keuzeAntwoorden2.add("1 2");
-        keuzeAntwoorden2.add("2 3");
-        keuzeAntwoorden2.add("3 4");
-        Vraag vraag2 = new Vraag("Wat is 2+2?", 3, keuzeAntwoorden2, examen);
-        ArrayList<String> keuzeAntwoorden3 = new ArrayList<String>();
-        keuzeAntwoorden3.add("1 Delft");
-        keuzeAntwoorden3.add("2 Maassluis");
-        keuzeAntwoorden3.add("3 Arnhem");
-        Vraag vraag3 = new Vraag("Waar woont Daniel?", 2, keuzeAntwoorden3, examen);
-        ArrayList<String> keuzeAntwoorden4 = new ArrayList<String>();
-        keuzeAntwoorden4.add("1 1 meter 50");
-        keuzeAntwoorden4.add("2 1 meter 20");
-        keuzeAntwoorden4.add("3 Ja idd");
-        Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
-
+        Initialize();
         //TEST
         //System.out.println(examen.getVragen());
 
@@ -108,6 +72,45 @@ public class Main {
                 System.out.println("\nJe hebt hier geen rechten voor!\n");
             }
         }
+    }
+
+    public static void Initialize() {
+        Examen examen = new Examen("Nederlands", 10);
+
+        //Gebruikers
+        Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
+        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943,
+                "Wachtwoord", true);
+        Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", true);
+        Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
+        examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
+
+        //Vragen
+        ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
+        keuzeAntwoorden.add("1 aap");
+        keuzeAntwoorden.add("2 poes");
+        keuzeAntwoorden.add("3 hondje");
+        Vraag vraag = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+        ArrayList<String> keuzeAntwoorden1 = new ArrayList<String>();
+        keuzeAntwoorden1.add("1 Rikash");
+        keuzeAntwoorden1.add("2 Royalistic");
+        keuzeAntwoorden1.add("3 Gert");
+        Vraag vraag1 = new Vraag("Wat is Roy zijn bijnaam?", 1, keuzeAntwoorden1, examen);
+        ArrayList<String> keuzeAntwoorden2 = new ArrayList<String>();
+        keuzeAntwoorden2.add("1 2");
+        keuzeAntwoorden2.add("2 3");
+        keuzeAntwoorden2.add("3 4");
+        Vraag vraag2 = new Vraag("Wat is 2+2?", 3, keuzeAntwoorden2, examen);
+        ArrayList<String> keuzeAntwoorden3 = new ArrayList<String>();
+        keuzeAntwoorden3.add("1 Delft");
+        keuzeAntwoorden3.add("2 Maassluis");
+        keuzeAntwoorden3.add("3 Arnhem");
+        Vraag vraag3 = new Vraag("Waar woont Daniel?", 2, keuzeAntwoorden3, examen);
+        ArrayList<String> keuzeAntwoorden4 = new ArrayList<String>();
+        keuzeAntwoorden4.add("1 1 meter 50");
+        keuzeAntwoorden4.add("2 1 meter 20");
+        keuzeAntwoorden4.add("3 Ja idd");
+        Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
     }
 
     private static Gebruiker Inlog(Scanner scanner, Gebruiker gebruiker) {
