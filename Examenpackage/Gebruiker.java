@@ -1,19 +1,20 @@
 package Examenpackage;
 
-
 import java.util.*;
 
 public class Gebruiker {
     private String naam;
     private Integer gebruikerNummer;
+    private String wachtwoord;
     private ArrayList<Resultaat> resulaten = new ArrayList<Resultaat>();
     public static ArrayList<Gebruiker> gebruikerslijst = new ArrayList<Gebruiker>();
     private boolean admin;
 
 
-    public Gebruiker(String naam, Integer gebruikerNummer, boolean admin){
+    public Gebruiker(String naam, Integer gebruikerNummer, String wachtwoord, boolean admin){
         this.naam = naam;
         this.gebruikerNummer = gebruikerNummer;
+        this.wachtwoord = wachtwoord;
         this.admin = admin;
 
         gebruikerslijst.add(this);
@@ -27,22 +28,13 @@ public class Gebruiker {
         return naam;
     }
 
-//    public void maakExamen(){
-//         if (admin == true) {
-//             Examen examen = new Examen("examen 1", 10, Examenlijst examenlijst);
-//             System.out.println(examen);
-//         }
-//     }
-
     public Integer getGebruikerNummer() {
         return gebruikerNummer;
     }
 
-    //    public Resultaat getResulaat() {
-//        return resulaten;
-//    }
+    public String getWachtwoord() {return wachtwoord;}
 
-    public Gebruiker getStudentOnGebruikerNummer(int gebruikernummer) {
+    public Gebruiker getGebruikerOnGebruikerNummer(int gebruikernummer) {
         Gebruiker match = null;
         for (Gebruiker gebruiker : gebruikerslijst){
             if (gebruiker.getGebruikerNummer() == gebruikernummer) {
