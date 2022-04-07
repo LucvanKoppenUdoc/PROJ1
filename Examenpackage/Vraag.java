@@ -29,8 +29,8 @@ public class Vraag {
 
     @Override
     public String toString() {
-        return  "Vraag: " + vraagstelling + '\n' +
+        return  "\nVraag: " + vraagstelling + '\n' +
                 "goedAntwoord= " + goedAntwoord + "\n" +
-                "keuzeAntwoorden= " + keuzeAntwoorden + '\n';
+                "keuzeAntwoorden= " + keuzeAntwoorden + '\n' + '\n';
     }
 }
