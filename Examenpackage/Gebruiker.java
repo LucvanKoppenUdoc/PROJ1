@@ -65,7 +65,7 @@ public class Gebruiker {
         Gebruiker match = null;
         boolean removed = false;
         for (Gebruiker gebruiker : gebruikerslijst){
-            if (gebruiker.getNaam().contentEquals(naam)) {
+            if (gebruiker.getNaam().equals(naam)) {
                 match = gebruiker;
             }
         }

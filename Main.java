@@ -19,7 +19,7 @@ public class Main {
             String menu = """
                     Menu
                     1) Lijst met examens
-                    2) Lijst met studenten
+                    2) Lijst met gebruikers
                     3) Nieuwe student inschrijven
                     4) Student verwijderen
                     5) Examen afnemen
@@ -101,10 +101,10 @@ public class Main {
 
     }
     private static void MenuOptie4(Scanner scanner, Gebruiker gebruiker) {
+        scanner.nextLine();
         while (true) {
             try {
                 System.out.println("Welke student wilt u verwijderen?");
-                scanner.nextLine();
                 String studentNaam = scanner.nextLine();
                 if (gebruiker.verwijderStudent(studentNaam)) {
                     System.out.println(studentNaam + " is succesvol verwijderd");
@@ -114,7 +114,6 @@ public class Main {
                 }
 
             }
-            // Catch werkt niet
             catch (Exception e) {
                 System.out.println(e);
             }

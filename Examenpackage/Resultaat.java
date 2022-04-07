@@ -28,7 +28,11 @@ public class Resultaat {
     }
 
     public boolean isGeslaagd() {
-        return geslaagd;
+        if (cijfer - 5.5 >= 0.000000000) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
