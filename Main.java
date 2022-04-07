@@ -131,6 +131,7 @@ public class Main {
         System.out.println("hallo");
     }
     private static void menuOptieZes(Scanner scanner){
+        //nog afmaken
         scanner.nextLine();
         while (true) {
             try {
