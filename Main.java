@@ -46,15 +46,17 @@ public class Main {
                 menuOptieVier(scanner, gebruiker);
 
             } else if (menuInput == 5) {
-                MenuOptie5();
+                MenuOptieVijf();
 
             } else if (menuInput == 6) {
                 /// nog afmaken
                 menuOptieZes();
 
             } else if (menuInput == 7) {
+                menuOptieZeven();
 
             } else if (menuInput == 8) {
+                menuOptieAcht();
 
             } else if (menuInput == 0) {
                 System.out.println("Programma sluit af...");
@@ -111,6 +113,9 @@ public class Main {
             }
         }
     }
+    private static void MenuOptieVijf(Scanner scanner, Gebruiker gebruiker){
+        System.out.println("hallo");
+    }
     private static void menuOptieZes(Scanner scanner, Gebruiker gebruiker){
         scanner.nextLine();
         while (true) {
@@ -122,5 +127,11 @@ public class Main {
                 System.out.println("Graag een naam invoeren!");
             }
         }
+    }
+    private static void menuOptieZeven(Scanner scanner, Gebruiker gebruiker){
+        System.out.println("hallo");
+    }
+    private static void menuOptieAcht(Scanner scanner, Gebruiker gebruiker){
+        System.out.println("hallo");
     }
 }
