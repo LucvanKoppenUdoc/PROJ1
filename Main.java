@@ -111,7 +111,6 @@ public class Main {
             }
         }
     }
-<<<<<<< HEAD
     private static void menuOptieZes(Scanner scanner, Gebruiker gebruiker){
         scanner.nextLine();
         while (true) {
@@ -123,9 +122,5 @@ public class Main {
                 System.out.println("Graag een naam invoeren!");
             }
         }
-=======
-    private static void MenuOptie5(){
-        System.out.println("menu optie 5");
->>>>>>> 2acd14f042e79d4b8e6606dc78ccce98659b604d
     }
 }
