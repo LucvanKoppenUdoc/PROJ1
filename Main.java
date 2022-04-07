@@ -45,7 +45,7 @@ public class Main {
         keuzeAntwoorden4.add("3 Ja idd");
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
         //TEST
-        //System.out.println(examen.getVragen());
+        System.out.println(examen.getVragen());
 
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
         System.out.println(ingelogdeUser);
