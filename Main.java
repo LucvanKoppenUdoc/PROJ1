@@ -20,11 +20,18 @@ public class Main {
         Inlog(scanner, gebruiker);
 
         //Vragen
-        Vraag vraag = new Vraag("Wat is de bijnaam voor Roy?", "D");
-        Vraag vraag1 = new Vraag("Hoevaak is Roy opkomen dagen?", "C");
-        Vraag vraag2 = new Vraag("Hoeveel heeft Roy aan dit project gedaan?", "A");
-        Vraag vraag3 = new Vraag("Houd Daniels moeder van Daniel?", "C");
-        Vraag vraag4 = new Vraag("Hoeveel likes heeft Daniel op Tinder?", "B");
+        ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
+        keuzeAntwoorden.add("1 aap");
+        keuzeAntwoorden.add("2 poes");
+        keuzeAntwoorden.add("3 hondje");
+        Vraag vraag = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+        Vraag vraag1 = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+        Vraag vraag2 = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+        Vraag vraag3 = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+        Vraag vraag4 = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+
+        System.out.println(examen.getVragen());
+
         
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
 
