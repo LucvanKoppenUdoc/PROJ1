@@ -16,6 +16,7 @@ public class Main {
                 String gebruikerNummer = scanner.nextLine();
             System.out.println("Wat is je wachtwoord?");
             // if (getGebruikerOnGebruikerNummer().getWachtwoord.equals(scanner.nextInt()))
+            break;
         }
         while (true) {
             String menu = """
