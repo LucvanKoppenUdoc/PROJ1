@@ -13,7 +13,7 @@ public class Main {
 
         while (true) {
             System.out.println("Wat is je gebruikerNummer?");
-                String gebruikerNummer = scanner.nextInt();
+                String gebruikerNummer = scanner.nextLine();
             System.out.println("Wat is je wachtwoord?");
             // if (getGebruikerOnGebruikerNummer().getWachtwoord.equals(scanner.nextInt()))
         }
@@ -85,8 +85,7 @@ public class Main {
                 int stNmrInput = scanner.nextInt();
                 scanner.nextLine();
                 System.out.println("Geef het wachtwoord: ");
-                String stWwInput = scanner.nextInt();
-                scanner.nextLine();
+                String stWwInput = scanner.nextLine();
                 boolean adminChoise = false;
                 while (true) {
                     System.out.println("Is dit een docent (y/n)");
