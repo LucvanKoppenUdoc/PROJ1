@@ -85,7 +85,7 @@ public class Gebruiker {
     @Override
     public String toString() {
         return  "Naam = " + naam + "\n" +
-                "StudentNummer = " + gebruikerNummer + "\n \t" +
+                "StudentNummer = " + gebruikerNummer + "\n" +
                 "Admin = " + admin + "\n";
     }
 }
