@@ -6,11 +6,8 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
-
-<<<<<<< Updated upstream
         Examen examen = new Examen("Nederlands", 10);
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "SpaceCake", true);
-=======
         Examenlijst examenlijst = new Examenlijst();
         Examen examen = new Examen("Nederlands", 10, examenlijst );
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "IkBenLuc", true);
@@ -19,9 +16,8 @@ public class Main {
             System.out.println("Wat is je gebruikerNummer?");
                 String gebruikerNummer = scanner.nextInt();
             System.out.rpintln("Wat is je wachtwoord?");
-            if (getGebruikerOnGebruikerNummer().getWachtwoord
+            if (getGebruikerOnGebruikerNummer().getWachtwoord.equals(scanner.nextInt()))
         }
->>>>>>> Stashed changes
         while (true) {
             String menu = """
                     Menu
