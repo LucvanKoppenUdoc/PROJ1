@@ -113,10 +113,10 @@ public class Main {
             }
         }
     }
-    private static void MenuOptieVijf(Scanner scanner, Gebruiker gebruiker){
+    private static void MenuOptieVijf(){
         System.out.println("hallo");
     }
-    private static void menuOptieZes(Scanner scanner, Gebruiker gebruiker){
+    private static void menuOptieZes(Scanner scanner){
         scanner.nextLine();
         while (true) {
             try {
@@ -128,10 +128,10 @@ public class Main {
             }
         }
     }
-    private static void menuOptieZeven(Scanner scanner, Gebruiker gebruiker){
+    private static void menuOptieZeven(){
         System.out.println("hallo");
     }
-    private static void menuOptieAcht(Scanner scanner, Gebruiker gebruiker){
+    private static void menuOptieAcht(){
         System.out.println("hallo");
     }
 }
