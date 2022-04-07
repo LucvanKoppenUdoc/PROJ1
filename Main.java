@@ -8,7 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         Examen examen = new Examen("Nederlands", 10);
-        Gebruiker gebruiker = new Gebruiker("Luc", 21095582, true);
+        Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "SpaceCake", true);
         while (true) {
             String menu = """
                     Menu
