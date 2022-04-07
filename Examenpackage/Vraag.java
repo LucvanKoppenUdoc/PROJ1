@@ -7,9 +7,12 @@ public class Vraag {
     private Integer goedAntwoord;
     private ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
 
-    public Vraag(String vraagstelling, Integer goedAntwoord){
+    public Vraag(String vraagstelling, Integer goedAntwoord, ArrayList<String> keuzeAntwoorden, Examen examen){
         this.vraagstelling = vraagstelling;
         this.goedAntwoord = goedAntwoord;
+        this.keuzeAntwoorden = keuzeAntwoorden;
+
+        examen.addVragen(this);
     }
 
     public String getVraagstelling() {

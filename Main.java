@@ -6,7 +6,11 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
+
+        //Examens
         Examen examen = new Examen("Nederlands", 10);
+
+        //Gebruikers
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
         Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943,
                 "Wachtwoord", true);
@@ -14,6 +18,22 @@ public class Main {
         Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
 
+        Inlog(scanner, gebruiker);
+
+        //Vragen
+        ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
+        keuzeAntwoorden.add("1 aap");
+        keuzeAntwoorden.add("2 poes");
+        keuzeAntwoorden.add("3 hondje");
+        Vraag vraag = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+        Vraag vraag1 = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+        Vraag vraag2 = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+        Vraag vraag3 = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+        Vraag vraag4 = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+
+        System.out.println(examen.getVragen());
+
+        
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
         System.out.println(ingelogdeUser);
         while (true) {
