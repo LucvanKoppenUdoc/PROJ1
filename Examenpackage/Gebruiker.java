@@ -55,7 +55,7 @@ public class Gebruiker {
     public Gebruiker getStudentOnName(String naam) {
         Gebruiker match = null;
         for (Gebruiker gebruiker : gebruikerslijst){
-            if (gebruiker.getNaam() == naam) {
+            if (gebruiker.getNaam().contentEquals(naam)) {
                 match = gebruiker;
             }
         }
