@@ -182,7 +182,12 @@ public class Main {
         }
     }
     private static void examenAfnemen(){
-        System.out.println(Examen.getExamenlijst());
+        while(true){
+            for (Examen examen : Examen.getExamenlijst()) {
+                System.out.println(examen.getNaam());
+            }
+            break;
+        }
     }
     private static void studentGeslaagd(Scanner scanner){
         //nog afmaken
