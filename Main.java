@@ -7,8 +7,7 @@ public class Main {
     {
         Scanner scanner = new Scanner(System.in);
 
-        Examenlijst examenlijst = new Examenlijst();
-        Examen examen = new Examen("Nederlands", 10, examenlijst );
+        Examen examen = new Examen("Nederlands", 10);
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, true);
         while (true) {
             String menu = """
@@ -35,25 +34,29 @@ public class Main {
             }
             System.out.println("uw keuze is: " + menuInput);  // Output user input
             if (menuInput == 1) {
-                System.out.println(examenlijst);
+                System.out.println(examen.examenlijst);
 
             } else if (menuInput == 2) {
                 System.out.println(gebruiker.getGebruikersLijst());
 
             } else if (menuInput == 3) {
-                GegevensVerkrijgen(scanner);
+                menuOptieDrie(scanner);
 
             } else if (menuInput == 4) {
-                MenuOptie4(scanner, gebruiker);
+                menuOptieVier(scanner, gebruiker);
 
             } else if (menuInput == 5) {
-                MenuOptie5();
+                MenuOptieVijf();
 
             } else if (menuInput == 6) {
+                /// nog afmaken
+                menuOptieZes();
 
             } else if (menuInput == 7) {
+                menuOptieZeven();
 
             } else if (menuInput == 8) {
+                menuOptieAcht();
 
             } else if (menuInput == 0) {
                 System.out.println("Programma sluit af...");
@@ -62,7 +65,7 @@ public class Main {
         }
     }
 
-    private static void GegevensVerkrijgen(Scanner scanner) {
+    private static void menuOptieDrie(Scanner scanner) {
         System.out.println("Geef de naam: ");
         scanner.nextLine();
         String naamInput = scanner.nextLine();
@@ -92,7 +95,7 @@ public class Main {
             }
         }
     }
-    private static void MenuOptie4(Scanner scanner, Gebruiker gebruiker) {
+    private static void menuOptieVier(Scanner scanner, Gebruiker gebruiker) {
         scanner.nextLine();
         while (true) {
             try {
@@ -110,7 +113,25 @@ public class Main {
             }
         }
     }
-    private static void MenuOptie5(){
-        System.out.println("menu optie 5");
+    private static void MenuOptieVijf(){
+        System.out.println("hallo");
+    }
+    private static void menuOptieZes(Scanner scanner){
+        scanner.nextLine();
+        while (true) {
+            try {
+                System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
+                String inputNaam = scanner.nextLine();
+            }
+            catch(Exception e){
+                System.out.println("Graag een naam invoeren!");
+            }
+        }
+    }
+    private static void menuOptieZeven(){
+        System.out.println("hallo");
+    }
+    private static void menuOptieAcht(){
+        System.out.println("hallo");
     }
 }

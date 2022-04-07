@@ -7,13 +7,14 @@ public class Examen {
     private String naam;
     private ArrayList<Gebruiker> studentenGeslaagd = new ArrayList<Gebruiker>();
     private ArrayList<Vraag> vragen = new ArrayList<Vraag>();
+    public static ArrayList<Examen> examenlijst= new ArrayList<Examen>();
     private Integer teBehalenPunten;
     
-    public Examen(String naam, Integer teBehalenPunten, Examenlijst examenlijst){
+    public Examen(String naam, Integer teBehalenPunten){
         this.naam = naam;
         this.teBehalenPunten = teBehalenPunten;
 
-        examenlijst.addExamen(this);
+        examenlijst.add(this);
     }
 
     public String getNaam() {
@@ -42,6 +43,10 @@ public class Examen {
 
     public void addVragen(Vraag vraag) {
         this.vragen.add(vraag);
+    }
+
+    public static ArrayList<Examen> getExamenlijst() {
+        return examenlijst;
     }
 
     @Override
