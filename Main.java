@@ -7,8 +7,21 @@ public class Main {
     {
         Scanner scanner = new Scanner(System.in);
 
+<<<<<<< Updated upstream
         Examen examen = new Examen("Nederlands", 10);
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "SpaceCake", true);
+=======
+        Examenlijst examenlijst = new Examenlijst();
+        Examen examen = new Examen("Nederlands", 10, examenlijst );
+        Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "IkBenLuc", true);
+
+        while (true) {
+            System.out.println("Wat is je gebruikerNummer?");
+                String gebruikerNummer = scanner.nextInt();
+            System.out.rpintln("Wat is je wachtwoord?");
+            if (getGebruikerOnGebruikerNummer().getWachtwoord
+        }
+>>>>>>> Stashed changes
         while (true) {
             String menu = """
                     Menu
