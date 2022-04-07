@@ -9,8 +9,7 @@ public class Main {
     {
         Scanner scanner = new Scanner(System.in);
 
-        Examenlijst examenlijst = new Examenlijst();
-        Examen examen = new Examen("Nederlands", 10, examenlijst );
+        Examen examen = new Examen("Nederlands", 10);
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, true);
 
 
@@ -42,7 +41,7 @@ public class Main {
             System.out.println("uw keuze is: " + menuInput);  // Output user input
 
             if (menuInput == 1) {
-                System.out.println(examenlijst);
+                System.out.println(examen.examenlijst);
 
             } else if (menuInput == 2) {
                 System.out.println(gebruiker.getGebruikersLijst());
