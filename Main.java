@@ -7,12 +7,12 @@ public class Main {
     {
         Scanner scanner = new Scanner(System.in);
         Examen examen = new Examen("Nederlands", 10);
-        Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "SpaceCake", true);
-        Gebruiker gebruiker2 = new Gebruiker("Luc", 12365278, "SpaceCake", true);
-        Gebruiker gebruiker3 = new Gebruiker("Luc", 76571241, "SpaceCake", true);
+        Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
+        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord", true);
+        Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", true);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
 
-        //Inlog(scanner, gebruiker);
+        Inlog(scanner, gebruiker);
 
         while (true) {
             String menu = """
