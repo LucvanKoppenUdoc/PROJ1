@@ -8,6 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Examen examen = new Examen("Nederlands", 10);
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "SpaceCake", true);
+        Gebruiker ingelogdeGebruiker = gebruiker;
         Examen examen1 = new Examen("Nederlands", 10 );
         Gebruiker gebruiker1 = new Gebruiker("Luc", 21095582, "IkBenLuc", true);
 
