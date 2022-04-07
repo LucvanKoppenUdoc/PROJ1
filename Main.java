@@ -10,16 +10,22 @@ public class Main {
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "SpaceCake", true);
 
         while (true) {
-            System.out.println("Wat is je studentnummer?");
-            int gebruikerNummer = scanner.nextInt();
-            System.out.println("Wat is je wachtwoord?");
-            scanner.nextLine();
-            String wachtwoordInput = scanner.nextLine();
-            if (gebruiker.getGebruikerOnGebruikerNummer(gebruikerNummer).getWachtwoord().equals(wachtwoordInput)) {
-                break;
-            } else {
-                System.out.println("Verkeerder inlog probeer opnieuw!\n");
+            try {
+                System.out.println("Wat is je studentnummer?");
+                int gebruikerNummer = scanner.nextInt();
+                System.out.println("Wat is je wachtwoord?");
+                scanner.nextLine();
+                String wachtwoordInput = scanner.nextLine();
+                if (gebruiker.getGebruikerOnGebruikerNummer(gebruikerNummer).getWachtwoord().equals(wachtwoordInput)) {
+                    break;
+                } else {
+                    System.out.println("Verkeerder inlog probeer opnieuw!\n");
+                }
+            } catch (Exception e) {
+                System.out.println("Graag alleen cijfers gebruiken\n");
+                scanner.next();
             }
+
         }
         while (true) {
             String menu = """
