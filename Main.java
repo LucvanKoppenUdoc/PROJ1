@@ -6,10 +6,8 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
-
         //Examens
         Examen examen = new Examen("Nederlands", 10);
-
         //Gebruikers
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
         Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943,
@@ -20,6 +18,31 @@ public class Main {
 
         //Vragen
         ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
+<<<<<<< HEAD
+        keuzeAntwoorden.add("1 aap");
+        keuzeAntwoorden.add("2 poes");
+        keuzeAntwoorden.add("3 hondje");
+        Vraag vraag = new Vraag("Wat is mijn lievelingsdier?", 1, keuzeAntwoorden, examen);
+        ArrayList<String> keuzeAntwoorden1 = new ArrayList<String>();
+        keuzeAntwoorden1.add("1 Rikash");
+        keuzeAntwoorden1.add("2 Royalistic");
+        keuzeAntwoorden1.add("3 Gert");
+        Vraag vraag1 = new Vraag("Wat is Roy zijn bijnaam?", 1, keuzeAntwoorden1, examen);
+        ArrayList<String> keuzeAntwoorden2 = new ArrayList<String>();
+        keuzeAntwoorden2.add("1 2");
+        keuzeAntwoorden2.add("2 3");
+        keuzeAntwoorden2.add("3 4");
+        Vraag vraag2 = new Vraag("Wat is 2+2?", 3, keuzeAntwoorden2, examen);
+        ArrayList<String> keuzeAntwoorden3 = new ArrayList<String>();
+        keuzeAntwoorden3.add("1 Delft");
+        keuzeAntwoorden3.add("2 Maassluis");
+        keuzeAntwoorden3.add("3 Arnhem");
+        Vraag vraag3 = new Vraag("Waar woont Daniel?", 2, keuzeAntwoorden3, examen);
+        ArrayList<String> keuzeAntwoorden4 = new ArrayList<String>();
+        keuzeAntwoorden4.add("1 1 meter 50");
+        keuzeAntwoorden4.add("2 1 meter 20");
+        keuzeAntwoorden4.add("3 Ja idd");
+=======
         keuzeAntwoorden.add("1: aap");
         keuzeAntwoorden.add("2: poes");
         keuzeAntwoorden.add("3: hondje");
@@ -43,10 +66,11 @@ public class Main {
         keuzeAntwoorden4.add("1: 1 meter 50");
         keuzeAntwoorden4.add("2: 1 meter 20");
         keuzeAntwoorden4.add("3: Ja idd");
+>>>>>>> f780ac9d269c1e6a96f1b83c0699c771e0dfc2ca
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
         
         //TEST
-        System.out.println(examen.getVragen());
+        //System.out.println(examen.getVragen());
 
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
         System.out.println(ingelogdeUser);
@@ -84,22 +108,22 @@ public class Main {
                 }
 
             } else if (menuInput == 3 && ingelogdeUser.getAdmin()) {
-                menuOptieDrie(scanner);
+                gebruikerToevoegen(scanner);
 
             } else if (menuInput == 4 && ingelogdeUser.getAdmin()) {
-                menuOptieVier(scanner, gebruiker);
+                gebruikerVerwijderen(scanner, gebruiker);
 
             } else if (menuInput == 5) {
-                MenuOptieVijf();
+                examenAfnemen();
 
             } else if (menuInput == 6 && ingelogdeUser.getAdmin()) {
                 studentGeslaagd(scanner);
 
             } else if (menuInput == 7 && ingelogdeUser.getAdmin()) {
-                menuOptieZeven();
+                studentGemaakt();
 
             } else if (menuInput == 8 && ingelogdeUser.getAdmin()) {
-                menuOptieAcht();
+                meesteExamensGehaald();
 
             } else if (menuInput == 0) {
                 System.out.println("Programma sluit af...");
@@ -124,18 +148,16 @@ public class Main {
                     break;
                 } else {
                     System.out.println("Verkeerder inlog probeer opnieuw!\n");
-
                 }
             } catch (Exception e) {
                 System.out.println("Graag alleen cijfers gebruiken\n");
                 scanner.next();
             }
-
         }
         return gebruiker.getGebruikerOnGebruikerNummer(gebruikerNummer);
     }
 
-    private static void menuOptieDrie(Scanner scanner) {
+    private static void gebruikerToevoegen(Scanner scanner) {
         System.out.println("Geef de naam: ");
         scanner.nextLine();
         String naamInput = scanner.nextLine();
@@ -167,7 +189,7 @@ public class Main {
             }
         }
     }
-    private static void menuOptieVier(Scanner scanner, Gebruiker gebruiker) {
+    private static void gebruikerVerwijderen(Scanner scanner, Gebruiker gebruiker) {
         scanner.nextLine();
         while (true) {
             try {
@@ -182,12 +204,11 @@ public class Main {
                 }
             }
             catch (Exception e) {
-                System.out.println(e);
                 scanner.next();
             }
         }
     }
-    private static void MenuOptieVijf(){
+    private static void examenAfnemen(){
         System.out.println("hallo");
     }
     private static void studentGeslaagd(Scanner scanner){
@@ -206,10 +227,10 @@ public class Main {
             }
         }
     }
-    private static void menuOptieZeven(){
+    private static void studentGemaakt(){
         System.out.println("hallo");
     }
-    private static void menuOptieAcht(){
+    private static void meesteExamensGehaald(){
         System.out.println("hallo");
     }
 }
