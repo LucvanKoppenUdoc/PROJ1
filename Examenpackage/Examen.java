@@ -52,7 +52,7 @@ public class Examen {
             test.add(gebruiker.getGebruikerNummer());
         }
 
-        return  "Examen " + naam +
+        return  "\nExamen " + naam +
                 "\nStudenten Geslaagd = " + test +
                 "\nAantal Studenten Geslaagd = " + test.size() +
                 "\nVragen = " + vragen.size() +
