@@ -120,7 +120,7 @@ public class Main {
                 scanner.nextLine();
                 String wachtwoordInput = scanner.nextLine();
                 if (gebruiker.getGebruikerOnGebruikerNummer(gebruikerNummer).getWachtwoord().equals(wachtwoordInput)) {
-                    System.out.println("hallo");
+                    System.out.println("Welkom!");
                     break;
                 } else {
                     System.out.println("Verkeerder inlog probeer opnieuw!\n");
