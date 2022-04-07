@@ -37,7 +37,9 @@ public class Main {
                 System.out.println(examen.examenlijst);
 
             } else if (menuInput == 2) {
-                System.out.println(gebruiker.getGebruikersLijst());
+                for (int i = 0; i < gebruiker.getGebruikersLijst().size(); i++) {
+                    System.out.println(gebruiker.getGebruikersLijst().get(i));
+                }
 
             } else if (menuInput == 3) {
                 menuOptieDrie(scanner);
@@ -50,7 +52,7 @@ public class Main {
 
             } else if (menuInput == 6) {
                 /// nog afmaken
-                menuOptieZes();
+                menuOptieZes(scanner);
 
             } else if (menuInput == 7) {
                 menuOptieZeven();
