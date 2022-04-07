@@ -44,10 +44,9 @@ public class Main {
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
         
         //TEST
-        //System.out.println(examen.getVragen());
+        System.out.println(examen.getVragen());
 
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
-        System.out.println(ingelogdeUser);
         while (true) {
             String menu = """
                     Menu
@@ -183,7 +182,7 @@ public class Main {
         }
     }
     private static void examenAfnemen(){
-        System.out.println("hallo");
+        System.out.println(Examen.getExamenlijst());
     }
     private static void studentGeslaagd(Scanner scanner){
         //nog afmaken
