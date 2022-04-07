@@ -9,7 +9,6 @@ public class Resultaat {
     private ArrayList<Resultaat> alleResultaten = new ArrayList<Resultaat>();
     private boolean geslaagd;
 
-
     public Resultaat(Gebruiker student, Examen examen){
         this.gebruiker = student;
         this.examen = examen;
