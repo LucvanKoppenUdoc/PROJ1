@@ -195,7 +195,9 @@ public class Main {
                     Examen tentamen = Examen.getExamenlijst().get(examenKeuze-1);
                     for (int i = 0; i < tentamen.getVragen().size(); i++) {
                         System.out.println(tentamen.getVragen().get(i).getVraagstelling());
-                        System.out.println(tentamen.getVragen().get(i).getKeuzeAntwoorden());
+                        for(int j = 0; j < tentamen.getVragen().get(i).getKeuzeAntwoorden().size(); j++){
+                            System.out.println(tentamen.getVragen().get(i).getKeuzeAntwoorden().get(j));
+                        }
                         System.out.println("Je keuze alsjeblieft:");
                         int keuzeStudent = scanner.nextInt();
                         if (keuzeStudent == tentamen.getVragen().get(i).getGoedAntwoord()){
