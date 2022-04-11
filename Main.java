@@ -9,8 +9,8 @@ public class Main {
     {
         Scanner scanner = new Scanner(System.in);
         //Examens
-        Examen examen = new Examen("Nederlands", 5);
-        Examen examen1 = new Examen("Frans", 0);
+        Examen examen = new Examen("Teambuilding", 5);
+        Examen examen1 = new Examen("Nederlands", 5);
 
         //Gebruikers
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
@@ -19,7 +19,7 @@ public class Main {
         Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
 
-        //Vragen
+        //Vragen Teambuilding
         ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
         keuzeAntwoorden.add("1) Aap");
         keuzeAntwoorden.add("2) Poes");
@@ -46,7 +46,37 @@ public class Main {
         keuzeAntwoorden4.add("3) Hoe lang is inderdaad een chinees");
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
 
+<<<<<<< Updated upstream
         //System.out.println(examen.getVragen())
+=======
+        //Vragen Nederlands
+        ArrayList<String> keuzeAntwoorden5 = new ArrayList<String>();
+        keuzeAntwoorden5.add("1) 19");
+        keuzeAntwoorden5.add("2) 20");
+        keuzeAntwoorden5.add("3) 21");
+        Vraag vraag5 = new Vraag("Hoeveel medeklinkers zijn er?", 2, keuzeAntwoorden5, examen1);
+        ArrayList<String> keuzeAntwoorden6 = new ArrayList<String>();
+        keuzeAntwoorden6.add("1) 5");
+        keuzeAntwoorden6.add("2) 6");
+        keuzeAntwoorden6.add("3) 7");
+        Vraag vraag6 = new Vraag("Hoeveel klinkers zijn er?", 1, keuzeAntwoorden6, examen1);
+        ArrayList<String> keuzeAntwoorden7 = new ArrayList<String>();
+        keuzeAntwoorden7.add("1) Klinker");
+        keuzeAntwoorden7.add("2) Medeklinker");
+        keuzeAntwoorden7.add("3) Ligt aan het woord waarin hij geschreven staat");
+        Vraag vraag7 = new Vraag("Is de Y een klinker of medeklinker?", 3, keuzeAntwoorden7, examen1);
+        ArrayList<String> keuzeAntwoorden8 = new ArrayList<String>();
+        keuzeAntwoorden8.add("1) Jatwoorden");
+        keuzeAntwoorden8.add("2) Leenwoorden");
+        keuzeAntwoorden8.add("3) Steelwoorden");
+        Vraag vraag8 = new Vraag("Wat is een woord voor woorden die uit een andere taal gebruikt worden?", 2, keuzeAntwoorden8, examen1);
+        ArrayList<String> keuzeAntwoorden9 = new ArrayList<String>();
+        keuzeAntwoorden9.add("1) Het rode boekje");
+        keuzeAntwoorden9.add("2) Het blauwe boekje");
+        keuzeAntwoorden9.add("3) Het groene boekje");
+        Vraag vraag9 = new Vraag("In welk boekje staan alle spellingsregels van het Nederlands?", 3, keuzeAntwoorden9, examen1);
+
+>>>>>>> Stashed changes
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
         while (true) {
             String menu = """
