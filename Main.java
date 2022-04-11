@@ -17,6 +17,7 @@ public class Main {
         Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord", true);
         Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", true);
         Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
+        Gebruiker gebruiker1 = new Gebruiker("Admin", 0, "0", true);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
 
         //Vragen
@@ -155,7 +156,7 @@ public class Main {
                         System.out.println("Graag een 'y' of 'n' geven");
                     }
                 }
-                Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput,stWwInput, adminChoise);
+                Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput, stWwInput, adminChoise);
                 break;
             } catch (Exception e) {
                 System.out.println("Graag cijfers gebruiken");
@@ -222,7 +223,11 @@ public class Main {
             try {
                 System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
                 String inputNaam = scanner.nextLine();
-                //if (gebruiker.)
+                Gebruiker test = Gebruiker.gebruikerslijst.get(2);
+                System.out.println(test);
+                if (inputNaam.equals("hi")){
+                    System.out.println("Ik zit er in");
+                }
                 break;
             }
             catch(Exception e){
