@@ -1,6 +1,5 @@
 
 
-import Examenpackage.Gebruiker;
 import Examenpackage.*;
 import java.util.*;
 
@@ -9,17 +8,18 @@ public class Main {
     {
         Scanner scanner = new Scanner(System.in);
         //Examens
-        Examen examen = new Examen("Nederlands", 5);
-        Examen examen1 = new Examen("Frans", 0);
+        Examen examen = new Examen("Teambuilding", 5);
+        Examen examen1 = new Examen("Nederlands", 5);
 
         //Gebruikers
-        Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
-        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord", true);
-        Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", true);
+        Gebruiker gebruiker = new Gebruiker("Admin", 0, "0", true);
+        Gebruiker gebruiker1 = new Gebruiker("Luc", 21095582, "Wachtwoord", false);
+        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord", false);
+        Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", false);
         Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
 
-        //Vragen
+        //Vragen Teambuilding
         ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
         keuzeAntwoorden.add("1) Aap");
         keuzeAntwoorden.add("2) Poes");
@@ -45,6 +45,35 @@ public class Main {
         keuzeAntwoorden4.add("2) 1 meter 20");
         keuzeAntwoorden4.add("3) Hoe lang is inderdaad een chinees");
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
+
+
+        //Vragen Nederlands
+        ArrayList<String> keuzeAntwoorden5 = new ArrayList<String>();
+        keuzeAntwoorden5.add("1) 19");
+        keuzeAntwoorden5.add("2) 20");
+        keuzeAntwoorden5.add("3) 21");
+        Vraag vraag5 = new Vraag("Hoeveel medeklinkers zijn er?", 2, keuzeAntwoorden5, examen1);
+        ArrayList<String> keuzeAntwoorden6 = new ArrayList<String>();
+        keuzeAntwoorden6.add("1) 5");
+        keuzeAntwoorden6.add("2) 6");
+        keuzeAntwoorden6.add("3) 7");
+        Vraag vraag6 = new Vraag("Hoeveel klinkers zijn er?", 1, keuzeAntwoorden6, examen1);
+        ArrayList<String> keuzeAntwoorden7 = new ArrayList<String>();
+        keuzeAntwoorden7.add("1) Klinker");
+        keuzeAntwoorden7.add("2) Medeklinker");
+        keuzeAntwoorden7.add("3) Ligt aan het woord waarin hij geschreven staat");
+        Vraag vraag7 = new Vraag("Is de Y een klinker of medeklinker?", 3, keuzeAntwoorden7, examen1);
+        ArrayList<String> keuzeAntwoorden8 = new ArrayList<String>();
+        keuzeAntwoorden8.add("1) Jatwoorden");
+        keuzeAntwoorden8.add("2) Leenwoorden");
+        keuzeAntwoorden8.add("3) Steelwoorden");
+        Vraag vraag8 = new Vraag("Wat is een woord voor woorden die uit een andere taal gebruikt worden?", 2, keuzeAntwoorden8, examen1);
+        ArrayList<String> keuzeAntwoorden9 = new ArrayList<String>();
+        keuzeAntwoorden9.add("1) Het rode boekje");
+        keuzeAntwoorden9.add("2) Het blauwe boekje");
+        keuzeAntwoorden9.add("3) Het groene boekje");
+        Vraag vraag9 = new Vraag("In welk boekje staan alle spellingsregels van het Nederlands?", 3, keuzeAntwoorden9, examen1);
+
 
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
         while (true) {
@@ -154,7 +183,7 @@ public class Main {
                         System.out.println("Graag een 'y' of 'n' geven");
                     }
                 }
-                Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput,stWwInput, adminChoise);
+                Gebruiker gebruiker = new Gebruiker(naamInput, stNmrInput, stWwInput, adminChoise);
                 break;
             } catch (Exception e) {
                 System.out.println("Graag cijfers gebruiken");
@@ -194,7 +223,9 @@ public class Main {
                     Examen tentamen = Examen.getExamenlijst().get(examenKeuze-1);
                     for (int i = 0; i < tentamen.getVragen().size(); i++) {
                         System.out.println(tentamen.getVragen().get(i).getVraagstelling());
-                        System.out.println(tentamen.getVragen().get(i).getKeuzeAntwoorden());
+                        for(int j = 0; j < tentamen.getVragen().get(i).getKeuzeAntwoorden().size(); j++){
+                            System.out.println(tentamen.getVragen().get(i).getKeuzeAntwoorden().get(j));
+                        }
                         System.out.println("Je keuze alsjeblieft:");
                         int keuzeStudent = scanner.nextInt();
                         if (keuzeStudent == tentamen.getVragen().get(i).getGoedAntwoord()){
@@ -224,7 +255,11 @@ public class Main {
             try {
                 System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
                 String inputNaam = scanner.nextLine();
-                //if (gebruiker.)
+                Gebruiker test = Gebruiker.gebruikerslijst.get(2);
+                System.out.println(test);
+                if (inputNaam.equals("hi")){
+                    System.out.println("Ik zit er in");
+                }
                 break;
             }
             catch(Exception e){
@@ -234,9 +269,14 @@ public class Main {
         }
     }
     private static void studentExamenGemaakt(){
-        System.out.println("hallo");
+        // welke examens heeft de student gehaald?
+        // nog afmaken
+        System.out.println(Examen.getExamenlijst());
+
     }
     private static void meesteExamensGehaald(){
+        // welke student heeft de meeste examens gehaald?
+        // nog afmaken
         System.out.println("hallo");
     }
 }
