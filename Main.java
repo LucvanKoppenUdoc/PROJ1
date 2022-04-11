@@ -255,12 +255,18 @@ public class Main {
             try {
                 System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
                 String inputNaam = scanner.nextLine();
-                Gebruiker test = Gebruiker.gebruikerslijst.get(2);
-                System.out.println(test);
-                if (inputNaam.equals("hi")){
-                    System.out.println("Ik zit er in");
-                }
+                for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++)
+                    if (inputNaam.equals(Gebruiker.gebruikerslijst.get(i))){
+                        System.out.println("Jatochhhhhhhh");
+                    }
                 break;
+
+                //Gebruiker test = Gebruiker.gebruikerslijst.get(2);
+                //System.out.println(test);
+                //if (inputNaam.equals("hi")){
+                //    System.out.println("Ik zit er in");
+                //}
+                //break;
             }
             catch(Exception e){
                 System.out.println("Graag een naam invoeren!");
