@@ -47,8 +47,11 @@ public class Main {
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         //System.out.println(examen.getVragen())
 =======
+=======
+>>>>>>> Stashed changes
         //Vragen Nederlands
         ArrayList<String> keuzeAntwoorden5 = new ArrayList<String>();
         keuzeAntwoorden5.add("1) 19");
@@ -76,6 +79,9 @@ public class Main {
         keuzeAntwoorden9.add("3) Het groene boekje");
         Vraag vraag9 = new Vraag("In welk boekje staan alle spellingsregels van het Nederlands?", 3, keuzeAntwoorden9, examen1);
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
         while (true) {
