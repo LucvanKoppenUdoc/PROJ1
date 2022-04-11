@@ -232,7 +232,8 @@ public class Main {
                             aantalCorrect++;
                         }
                     }
-                    double cijfer = (aantalCorrect / tentamen.getTeBehalenPunten()) * 10;
+                    double tebehalen = tentamen.getTeBehalenPunten();
+                    double cijfer = (aantalCorrect / tebehalen) * 10;
 
                     Resultaat resultaat = new Resultaat(huidigeGebruiker, tentamen, cijfer);
                     System.out.println(resultaat);
