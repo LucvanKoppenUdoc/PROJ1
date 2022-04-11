@@ -9,13 +9,12 @@ public class Main {
     {
         Scanner scanner = new Scanner(System.in);
         //Examens
-        Examen examen = new Examen("Nederlands", 10);
-        Examen examen1 = new Examen("Frans", 10);
+        Examen examen = new Examen("Nederlands", 5);
+        Examen examen1 = new Examen("Frans", 0);
 
         //Gebruikers
         Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
-        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943,
-                "Wachtwoord", true);
+        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord", true);
         Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", true);
         Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
@@ -47,8 +46,7 @@ public class Main {
         keuzeAntwoorden4.add("3) Hoe lang is inderdaad een chinees");
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
 
-        //System.out.println(examen.getVragen());
-
+        //System.out.println(examen.getVragen())
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
         while (true) {
             String menu = """
