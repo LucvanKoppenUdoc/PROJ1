@@ -47,10 +47,6 @@ public class Main {
         keuzeAntwoorden4.add("3) Hoe lang is inderdaad een chinees");
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
 
-        //TEST
-        for (int i = 0; i < examen.getVragen().size(); i++) {
-            System.out.println(examen.getVragen().get(i));
-        }
         //System.out.println(examen.getVragen());
 
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
@@ -188,6 +184,7 @@ public class Main {
         }
     }
     private static void examenAfnemen(Scanner scanner){
+        int aantalCorrect = 0;
         while(true) {
             int getal = 1;
             for (Examen examen : Examen.getExamenlijst()) {
@@ -197,9 +194,16 @@ public class Main {
             try {
                 int examenKeuze = scanner.nextInt();
                 if (examenKeuze > 0 && (examenKeuze-1) < Examen.getExamenlijst().size()) {
-                    //System.out.println(Examen.getExamenlijst().get(examenKeuze-1));
-                    Examen test1 = Examen.getExamenlijst().get(examenKeuze-1);
-                    System.out.println(test1);
+                    Examen tentamen = Examen.getExamenlijst().get(examenKeuze-1);
+                    for (int i = 0; i < tentamen.getVragen().size(); i++) {
+                        System.out.println(tentamen.getVragen().get(i).getVraagstelling());
+                        System.out.println(tentamen.getVragen().get(i).getKeuzeAntwoorden());
+                        System.out.println("Je keuze alsjeblieft:");
+                        int keuzeStudent = scanner.nextInt();
+                        if (keuzeStudent == tentamen.getVragen().get(i).getGoedAntwoord()){
+                            aantalCorrect++;
+                        }
+                    }
                     break;
                 } else {
                     System.out.println("Graag goede cijfers invoeren");
