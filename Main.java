@@ -1,6 +1,5 @@
 
 
-import Examenpackage.Gebruiker;
 import Examenpackage.*;
 import java.util.*;
 
@@ -17,7 +16,6 @@ public class Main {
         Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord", true);
         Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", true);
         Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
-        examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
 
         //Vragen Teambuilding
         ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
@@ -258,9 +256,14 @@ public class Main {
         }
     }
     private static void studentExamenGemaakt(){
-        System.out.println("hallo");
+        // welke examens heeft de student gehaald?
+        // nog afmaken
+        System.out.println(Examen.getExamenlijst());
+
     }
     private static void meesteExamensGehaald(){
+        // welke student heeft de meeste examens gehaald?
+        // nog afmaken
         System.out.println("hallo");
     }
 }
