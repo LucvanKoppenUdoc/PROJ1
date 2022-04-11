@@ -13,10 +13,14 @@ public class Main {
 
         //Gebruikers
         Gebruiker gebruiker = new Gebruiker("Admin", 0, "0", true);
-        Gebruiker gebruiker1 = new Gebruiker("Luc", 21095582, "Wachtwoord", false);
-        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord", false);
-        Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", false);
-        Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
+        Gebruiker gebruiker1 = new Gebruiker("Luc", 21095582, "Wachtwoord",
+                false);
+        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord",
+                false);
+        Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord",
+                false);
+        Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord",
+                false);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
 
         //Vragen Teambuilding
@@ -24,7 +28,8 @@ public class Main {
         keuzeAntwoorden.add("1) Aap");
         keuzeAntwoorden.add("2) Poes");
         keuzeAntwoorden.add("3) Hondje");
-        Vraag vraag = new Vraag("Wat is het lievelingsdier van Bram?", 1, keuzeAntwoorden, examen);
+        Vraag vraag = new Vraag("Wat is het lievelingsdier van Bram?", 1, keuzeAntwoorden,
+                examen);
         ArrayList<String> keuzeAntwoorden1 = new ArrayList<String>();
         keuzeAntwoorden1.add("1) Rikash");
         keuzeAntwoorden1.add("2) Royalistic");
@@ -62,17 +67,20 @@ public class Main {
         keuzeAntwoorden7.add("1) Klinker");
         keuzeAntwoorden7.add("2) Medeklinker");
         keuzeAntwoorden7.add("3) Ligt aan het woord waarin hij geschreven staat");
-        Vraag vraag7 = new Vraag("Is de Y een klinker of medeklinker?", 3, keuzeAntwoorden7, examen1);
+        Vraag vraag7 = new Vraag("Is de Y een klinker of medeklinker?", 3, keuzeAntwoorden7,
+                examen1);
         ArrayList<String> keuzeAntwoorden8 = new ArrayList<String>();
         keuzeAntwoorden8.add("1) Jatwoorden");
         keuzeAntwoorden8.add("2) Leenwoorden");
         keuzeAntwoorden8.add("3) Steelwoorden");
-        Vraag vraag8 = new Vraag("Wat is een woord voor woorden die uit een andere taal gebruikt worden?", 2, keuzeAntwoorden8, examen1);
+        Vraag vraag8 = new Vraag("Wat is een woord voor woorden die uit een andere taal gebruikt worden?"
+                , 2, keuzeAntwoorden8, examen1);
         ArrayList<String> keuzeAntwoorden9 = new ArrayList<String>();
         keuzeAntwoorden9.add("1) Het rode boekje");
         keuzeAntwoorden9.add("2) Het blauwe boekje");
         keuzeAntwoorden9.add("3) Het groene boekje");
-        Vraag vraag9 = new Vraag("In welk boekje staan alle spellingsregels van het Nederlands?", 3, keuzeAntwoorden9, examen1);
+        Vraag vraag9 = new Vraag("In welk boekje staan alle spellingsregels van het Nederlands?"
+                , 3, keuzeAntwoorden9, examen1);
 
 
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
@@ -234,9 +242,10 @@ public class Main {
                     }
                     double tebehalen = tentamen.getTeBehalenPunten();
                     double cijfer = (aantalCorrect / tebehalen) * 10;
-
                     Resultaat resultaat = new Resultaat(huidigeGebruiker, tentamen, cijfer);
                     System.out.println(resultaat);
+                    System.out.println(resultaat.getGeslaagd());
+                    System.out.println(resultaat.getExamen());
                     break;
                 } else {
                     System.out.println("Graag goede cijfers invoeren");
@@ -249,24 +258,17 @@ public class Main {
         }
     }
     private static void studentGeslaagd(Scanner scanner){
-        //nog afmaken
         scanner.nextLine();
         while (true) {
             try {
                 System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
                 String inputNaam = scanner.nextLine();
-                for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++)
-                    if (inputNaam.equals(Gebruiker.gebruikerslijst.get(i))){
-                        System.out.println("Jatochhhhhhhh");
+                for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++) {
+                    if (inputNaam.equals(Gebruiker.gebruikerslijst.get(i).getNaam())) {
+                        System.out.println(Gebruiker.gebruikerslijst.get(i));
                     }
+                }
                 break;
-
-                //Gebruiker test = Gebruiker.gebruikerslijst.get(2);
-                //System.out.println(test);
-                //if (inputNaam.equals("hi")){
-                //    System.out.println("Ik zit er in");
-                //}
-                //break;
             }
             catch(Exception e){
                 System.out.println("Graag een naam invoeren!");
