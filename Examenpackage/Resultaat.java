@@ -9,9 +9,16 @@ public class Resultaat {
     public static ArrayList<Resultaat> alleResultaten = new ArrayList<Resultaat>();
     private boolean geslaagd;
 
-    public Resultaat(Gebruiker student, Examen examen){
+    public Resultaat(Gebruiker student, Examen examen, double cijfer){
         this.gebruiker = student;
         this.examen = examen;
+        this.cijfer = cijfer;
+        if (cijfer - 5.5 >= 0.000000000) {
+            this.geslaagd = true;
+        } else {
+            this.geslaagd = false;
+        }
+        //alleResultaten.add(this); << dit werkt nog niet goed
     }
 
     public Examen getExamen() {
@@ -26,19 +33,13 @@ public class Resultaat {
         return alleResultaten;
     }
 
-    public boolean isGeslaagd() {
-        if (cijfer - 5.5 >= 0.000000000) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    public boolean getGeslaagd() {return geslaagd; }
 
     @Override
     public String toString() {
         return "Resultaat{" +
-                "examen=" + examen +
-                ", gebruiker=" + gebruiker +
+                "examen=" + examen.getNaam() +
+                ", gebruiker=" + gebruiker.getNaam() +
                 ", cijfer=" + cijfer +
                 ", alleResultaten=" + alleResultaten +
                 ", geslaagd=" + geslaagd +

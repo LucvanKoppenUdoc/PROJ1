@@ -19,6 +19,8 @@ public class Examen {
 
     public String getNaam() {return naam; }
 
+    public int getTeBehalenPunten() {return teBehalenPunten; }
+
     public ArrayList<Gebruiker> getStudentGeslaagd() {
         return studentenGeslaagd;
     }

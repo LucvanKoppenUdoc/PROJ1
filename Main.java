@@ -46,7 +46,6 @@ public class Main {
         keuzeAntwoorden4.add("3) Hoe lang is inderdaad een chinees");
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
 
-        //System.out.println(examen.getVragen())
         Gebruiker ingelogdeUser = Inlog(scanner, gebruiker);
         while (true) {
             String menu = """
@@ -88,7 +87,7 @@ public class Main {
                 gebruikerVerwijderen(scanner, gebruiker);
 
             } else if (menuInput == 5) {
-                examenAfnemen(scanner);
+                examenAfnemen(scanner, ingelogdeUser);
 
             } else if (menuInput == 6 && ingelogdeUser.getAdmin()) {
                 studentGeslaagd(scanner);
@@ -181,7 +180,7 @@ public class Main {
             }
         }
     }
-    private static void examenAfnemen(Scanner scanner){
+    private static void examenAfnemen(Scanner scanner, Gebruiker huidigeGebruiker){
         int aantalCorrect = 0;
         while(true) {
             int getal = 1;
@@ -202,6 +201,11 @@ public class Main {
                             aantalCorrect++;
                         }
                     }
+                    double tebehalen = tentamen.getTeBehalenPunten(); double aantalcor = aantalCorrect;
+                    double cijfer = (tebehalen / aantalcor) * 10;
+
+                    Resultaat resultaat = new Resultaat(huidigeGebruiker, tentamen, cijfer);
+                    System.out.println(resultaat);
                     break;
                 } else {
                     System.out.println("Graag goede cijfers invoeren");
