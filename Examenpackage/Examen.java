@@ -29,9 +29,7 @@ public class Examen {
 
     public void addStudentGeslaagd(Gebruiker studentGeslaagd) { this.studentenGeslaagd.add(studentGeslaagd); }
 
-    public ArrayList<Vraag> getVragen() {
-        return vragen;
-    }
+    public ArrayList<Vraag> getVragen() {return vragen;}
 
     public void setVragen(ArrayList<Vraag> vragen) {
         this.vragen = vragen;

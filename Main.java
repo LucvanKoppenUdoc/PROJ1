@@ -197,8 +197,9 @@ public class Main {
             try {
                 int examenKeuze = scanner.nextInt();
                 if (examenKeuze > 0 && (examenKeuze-1) < Examen.getExamenlijst().size()) {
-                    System.out.println(Examen.getExamenlijst().get(examenKeuze-1));
-                    //Hier verder gaan. Printen van de vragen en opslaan.
+                    //System.out.println(Examen.getExamenlijst().get(examenKeuze-1));
+                    Examen test1 = Examen.getExamenlijst().get(examenKeuze-1);
+                    System.out.println(test1);
                     break;
                 } else {
                     System.out.println("Graag goede cijfers invoeren");
