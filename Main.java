@@ -12,11 +12,11 @@ public class Main {
         Examen examen1 = new Examen("Nederlands", 5);
 
         //Gebruikers
-        Gebruiker gebruiker = new Gebruiker("Luc", 21095582, "Wachtwoord", true);
-        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord", true);
-        Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", true);
+        Gebruiker gebruiker = new Gebruiker("Admin", 0, "0", true);
+        Gebruiker gebruiker1 = new Gebruiker("Luc", 21095582, "Wachtwoord", false);
+        Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord", false);
+        Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord", false);
         Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord", false);
-        Gebruiker gebruiker1 = new Gebruiker("Admin", 0, "0", true);
         examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
 
         //Vragen Teambuilding
