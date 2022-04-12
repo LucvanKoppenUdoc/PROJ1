@@ -271,7 +271,6 @@ public class Main {
             }
             catch(Exception e){
                 System.out.println("Graag een naam invoeren!");
-                scanner.next();
             }
         }
         while (true) {
@@ -287,7 +286,6 @@ public class Main {
             }
             catch(Exception e){
                 System.out.println("Graag een examen naam invoeren!");
-                scanner.next();
             }
         }
         if (examen.getStudentGeslaagd(student)) {
