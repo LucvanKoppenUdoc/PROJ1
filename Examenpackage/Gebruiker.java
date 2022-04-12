@@ -20,6 +20,8 @@ public class Gebruiker {
         gebruikerslijst.add(this);
     }
 
+    public Gebruiker(){}
+
     public ArrayList<Gebruiker> getGebruikersLijst() {
         return gebruikerslijst;
     }
@@ -44,6 +46,16 @@ public class Gebruiker {
             }
         }
         return match;
+    }
+
+    public ArrayList<Examen> getBehaaldeExamens() {
+        ArrayList<Examen> behaaldeExamens = new ArrayList<Examen>();
+        for (Resultaat resultaat : this.resulaten) {
+            if (!behaaldeExamens.contains(resultaat.getExamen())) {
+                behaaldeExamens.add(resultaat.getExamen());
+            }
+        }
+        return behaaldeExamens;
     }
 
     public Gebruiker getStudentOnName(String naam) {

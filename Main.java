@@ -14,14 +14,14 @@ public class Main {
         //Gebruikers
         Gebruiker gebruiker = new Gebruiker("Admin", 0, "0", true);
         Gebruiker gebruiker1 = new Gebruiker("Luc", 21095582, "Wachtwoord",
-                false);
+                true);
         Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord",
                 false);
         Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord",
                 false);
         Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord",
                 false);
-        examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
+
 
         //Vragen Teambuilding
         ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
@@ -130,7 +130,7 @@ public class Main {
                 studentGeslaagd(scanner);
 
             } else if (menuInput == 7 && ingelogdeUser.getAdmin()) {
-                studentExamenGemaakt();
+                studentExamenGehaald(scanner);
 
             } else if (menuInput == 8 && ingelogdeUser.getAdmin()) {
                 meesteExamensGehaald();
@@ -243,9 +243,6 @@ public class Main {
                     double tebehalen = tentamen.getTeBehalenPunten();
                     double cijfer = (aantalCorrect / tebehalen) * 10;
                     Resultaat resultaat = new Resultaat(huidigeGebruiker, tentamen, cijfer);
-                    System.out.println(resultaat);
-                    System.out.println(resultaat.getGeslaagd());
-                    System.out.println(resultaat.getExamen());
                     break;
                 } else {
                     System.out.println("Graag goede cijfers invoeren");
@@ -259,13 +256,15 @@ public class Main {
     }
     private static void studentGeslaagd(Scanner scanner){
         scanner.nextLine();
+        Gebruiker student = new Gebruiker();
+        Examen examen = new Examen();
         while (true) {
             try {
                 System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
                 String inputNaam = scanner.nextLine();
                 for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++) {
                     if (inputNaam.equals(Gebruiker.gebruikerslijst.get(i).getNaam())) {
-                        System.out.println(Gebruiker.gebruikerslijst.get(i));
+                        student = Gebruiker.gebruikerslijst.get(i);
                     }
                 }
                 break;
@@ -275,12 +274,51 @@ public class Main {
                 scanner.next();
             }
         }
+        while (true) {
+            try {
+                System.out.println("Van welk examen wil je nalopen of " + student.getNaam() + " is geslaagd?");
+                String inputExamen = scanner.nextLine();
+                for (int i = 0; i < Examen.examenlijst.size(); i++) {
+                    if (inputExamen.equals(Examen.examenlijst.get(i).getNaam())) {
+                        examen = Examen.examenlijst.get(i);
+                    }
+                }
+                break;
+            }
+            catch(Exception e){
+                System.out.println("Graag een examen naam invoeren!");
+                scanner.next();
+            }
+        }
+        if (examen.getStudentGeslaagd(student)) {
+            System.out.println(student.getNaam() + " is geslaagd voor " + examen.getNaam() + ".");
+        } else {
+            System.out.println(student.getNaam() + " is niet geslaagd voor " + examen.getNaam() + ".");
+        }
+        scanner.nextLine();
     }
-    private static void studentExamenGemaakt(){
-        // welke examens heeft de student gehaald?
-        // nog afmaken
-        System.out.println(Examen.getExamenlijst());
+    private static void studentExamenGehaald(Scanner scanner){
+        scanner.nextLine();
+        Gebruiker student = new Gebruiker();
+        while (true) {
+            try {
+                System.out.println("Van welke student wil je na gaan welke examens hij/zij heeft gehaald?");
+                String inputNaam = scanner.nextLine();
+                for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++) {
+                    if (inputNaam.equals(Gebruiker.gebruikerslijst.get(i).getNaam())) {
+                        student = Gebruiker.gebruikerslijst.get(i);
+                    }
+                }
+                break;
+            }
+            catch(Exception e){
+                System.out.println("Graag een naam invoeren!");
+                scanner.next();
+            }
+        }
+        for (Examen examen : getBehaaldeExamens()) {
 
+        }
     }
     private static void meesteExamensGehaald(){
         // welke student heeft de meeste examens gehaald?
