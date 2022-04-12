@@ -326,8 +326,9 @@ public class Main {
         for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++) {
             if (meestBehaald <= Gebruiker.gebruikerslijst.get(i).getBehaaldeExamens().size()) {
                 student = Gebruiker.gebruikerslijst.get(i);
+                meestBehaald = Gebruiker.gebruikerslijst.get(i).getBehaaldeExamens().size();
             }
         }
-        System.out.println(student.getNaam() + " Heeft met " + student.getBehaaldeExamens().size() + " behaalde examens de meest behaalde examens.");
+        System.out.println(student.getNaam() + " heeft met " + student.getBehaaldeExamens().size() + " behaalde examens de meest behaalde examens.");
     }
 }
