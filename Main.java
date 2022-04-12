@@ -14,7 +14,7 @@ public class Main {
         //Gebruikers
         Gebruiker gebruiker = new Gebruiker("Admin", 0, "0", true);
         Gebruiker gebruiker1 = new Gebruiker("Luc", 21095582, "Wachtwoord",
-                false);
+                true);
         Gebruiker gebruiker2 = new Gebruiker("Daniel", 21137943, "Wachtwoord",
                 false);
         Gebruiker gebruiker3 = new Gebruiker("Bram", 21113653, "Wachtwoord",
@@ -243,9 +243,6 @@ public class Main {
                     double tebehalen = tentamen.getTeBehalenPunten();
                     double cijfer = (aantalCorrect / tebehalen) * 10;
                     Resultaat resultaat = new Resultaat(huidigeGebruiker, tentamen, cijfer);
-                    System.out.println(resultaat);
-                    System.out.println(resultaat.getGeslaagd());
-                    System.out.println(resultaat.getExamen());
                     break;
                 } else {
                     System.out.println("Graag goede cijfers invoeren");
@@ -293,6 +290,12 @@ public class Main {
                 scanner.next();
             }
         }
+        if (examen.getStudentGeslaagd(student)) {
+            System.out.println(student.getNaam() + " is geslaagd voor " + examen.getNaam() + ".");
+        } else {
+            System.out.println(student.getNaam() + " is niet geslaagd voor " + examen.getNaam() + ".");
+        }
+        scanner.nextLine();
     }
     private static void studentExamenGemaakt(){
         // welke examens heeft de student gehaald?

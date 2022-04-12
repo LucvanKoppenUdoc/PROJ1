@@ -23,8 +23,20 @@ public class Examen {
 
     public int getTeBehalenPunten() {return teBehalenPunten; }
 
-    public ArrayList<Gebruiker> getStudentGeslaagd() {
+    public ArrayList<Gebruiker> getStudentenGeslaagd() {
         return studentenGeslaagd;
+    }
+
+    public boolean getStudentGeslaagd(Gebruiker student) {
+        boolean geslaagd = false;
+        for (Gebruiker gebruiker : this.studentenGeslaagd) {
+           if (gebruiker.equals(student)) {
+               geslaagd = true;
+           } else{
+               geslaagd = false;
+           }
+        }
+        return geslaagd;
     }
 
     public void setStudentGeslaagd(ArrayList<Gebruiker> studentGeslaagd) {
@@ -50,7 +62,7 @@ public class Examen {
     @Override
     public String toString() {
         ArrayList<Integer> test = new ArrayList<Integer>();
-        for (Gebruiker gebruiker : getStudentGeslaagd()){
+        for (Gebruiker gebruiker : getStudentenGeslaagd()){
             test.add(gebruiker.getGebruikerNummer());
         }
 
