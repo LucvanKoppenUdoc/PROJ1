@@ -17,6 +17,8 @@ public class Examen {
         examenlijst.add(this);
     }
 
+    public Examen(){}
+
     public String getNaam() {return naam; }
 
     public int getTeBehalenPunten() {return teBehalenPunten; }

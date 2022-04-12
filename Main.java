@@ -21,7 +21,7 @@ public class Main {
                 false);
         Gebruiker gebruiker4 = new Gebruiker("Rick", 20112602, "Wachtwoord",
                 false);
-        examen.setStudentGeslaagd(gebruiker.getGebruikersLijst());
+
 
         //Vragen Teambuilding
         ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
@@ -259,19 +259,37 @@ public class Main {
     }
     private static void studentGeslaagd(Scanner scanner){
         scanner.nextLine();
+        Gebruiker student = new Gebruiker();
+        Examen examen = new Examen();
         while (true) {
             try {
                 System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
                 String inputNaam = scanner.nextLine();
                 for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++) {
                     if (inputNaam.equals(Gebruiker.gebruikerslijst.get(i).getNaam())) {
-                        System.out.println(Gebruiker.gebruikerslijst.get(i));
+                        student = Gebruiker.gebruikerslijst.get(i);
                     }
                 }
                 break;
             }
             catch(Exception e){
                 System.out.println("Graag een naam invoeren!");
+                scanner.next();
+            }
+        }
+        while (true) {
+            try {
+                System.out.println("Van welk examen wil je nalopen of " + student.getNaam() + " is geslaagd?");
+                String inputExamen = scanner.nextLine();
+                for (int i = 0; i < Examen.examenlijst.size(); i++) {
+                    if (inputExamen.equals(Examen.examenlijst.get(i).getNaam())) {
+                        examen = Examen.examenlijst.get(i);
+                    }
+                }
+                break;
+            }
+            catch(Exception e){
+                System.out.println("Graag een examen naam invoeren!");
                 scanner.next();
             }
         }

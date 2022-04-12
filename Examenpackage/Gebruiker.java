@@ -20,6 +20,8 @@ public class Gebruiker {
         gebruikerslijst.add(this);
     }
 
+    public Gebruiker(){}
+
     public ArrayList<Gebruiker> getGebruikersLijst() {
         return gebruikerslijst;
     }

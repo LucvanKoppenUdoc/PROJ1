@@ -15,10 +15,11 @@ public class Resultaat {
         this.cijfer = cijfer;
         if (cijfer - 5.5 >= 0.000000000) {
             this.geslaagd = true;
+            examen.addStudentGeslaagd(student);
         } else {
             this.geslaagd = false;
         }
-        //alleResultaten.add(this); << dit werkt nog niet goed
+        alleResultaten.add(this);
     }
 
     public Examen getExamen() {
@@ -38,10 +39,9 @@ public class Resultaat {
     @Override
     public String toString() {
         return "Resultaat{" +
-                "examen=" + examen.getNaam() +
-                ", gebruiker=" + gebruiker.getNaam() +
+                "examen=" + examen +
+                ", gebruiker=" + gebruiker +
                 ", cijfer=" + cijfer +
-                ", alleResultaten=" + alleResultaten +
                 ", geslaagd=" + geslaagd +
                 '}';
     }
