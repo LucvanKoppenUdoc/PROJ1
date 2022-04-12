@@ -1,23 +1,24 @@
 import Examenpackage.*;
 import java.util.*;
 
-public class Main {
+public class unittest {
     public static void main(String[] args) {
-        
+        System.out.println("Result of testExamen is: " + testExamen());
     }
 
-    public static void testExamen() {
-
+    public static boolean testExamen() {
+        return true;
     }
 
-    public static void testGebruiker() {
-
+    public static boolean testGebruiker() {
+        return true;
     }
 
-    public static void testResultaat() {
+    public static boolean testResultaat() {
+        return true;
+    }
 
-    }''
-    public static void testMain() {
-
+    public static boolean testMain() {
+        return true;
     }
 }
