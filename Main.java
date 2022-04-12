@@ -323,6 +323,13 @@ public class Main {
         scanner.nextLine();
     }
     private static void meesteExamensGehaald(){
-        System.out.println("hallo");
+        Gebruiker student = new Gebruiker();
+        int meestBehaald = 0;
+        for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++) {
+            if (meestBehaald <= Gebruiker.gebruikerslijst.get(i).getBehaaldeExamens().size()) {
+                student = Gebruiker.gebruikerslijst.get(i);
+            }
+        }
+        System.out.println(student.getNaam() + " Heeft met " + student.getBehaaldeExamens().size() + " behaalde examens de meest behaalde examens.");
     }
 }
