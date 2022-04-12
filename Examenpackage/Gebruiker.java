@@ -48,6 +48,16 @@ public class Gebruiker {
         return match;
     }
 
+    public ArrayList<Examen> getBehaaldeExamens() {
+        ArrayList<Examen> behaaldeExamens = new ArrayList<Examen>();
+        for (Resultaat resultaat : this.resulaten) {
+            if (!behaaldeExamens.contains(resultaat.getExamen())) {
+                behaaldeExamens.add(resultaat.getExamen());
+            }
+        }
+        return behaaldeExamens;
+    }
+
     public Gebruiker getStudentOnName(String naam) {
         Gebruiker match = null;
         for (Gebruiker gebruiker : gebruikerslijst){

@@ -130,7 +130,7 @@ public class Main {
                 studentGeslaagd(scanner);
 
             } else if (menuInput == 7 && ingelogdeUser.getAdmin()) {
-                studentExamenGemaakt();
+                studentExamenGehaald(scanner);
 
             } else if (menuInput == 8 && ingelogdeUser.getAdmin()) {
                 meesteExamensGehaald();
@@ -297,11 +297,28 @@ public class Main {
         }
         scanner.nextLine();
     }
-    private static void studentExamenGemaakt(){
-        // welke examens heeft de student gehaald?
-        // nog afmaken
-        System.out.println(Examen.getExamenlijst());
+    private static void studentExamenGehaald(Scanner scanner){
+        scanner.nextLine();
+        Gebruiker student = new Gebruiker();
+        while (true) {
+            try {
+                System.out.println("Van welke student wil je na gaan welke examens hij/zij heeft gehaald?");
+                String inputNaam = scanner.nextLine();
+                for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++) {
+                    if (inputNaam.equals(Gebruiker.gebruikerslijst.get(i).getNaam())) {
+                        student = Gebruiker.gebruikerslijst.get(i);
+                    }
+                }
+                break;
+            }
+            catch(Exception e){
+                System.out.println("Graag een naam invoeren!");
+                scanner.next();
+            }
+        }
+        for (Examen examen : getBehaaldeExamens()) {
 
+        }
     }
     private static void meesteExamensGehaald(){
         // welke student heeft de meeste examens gehaald?
