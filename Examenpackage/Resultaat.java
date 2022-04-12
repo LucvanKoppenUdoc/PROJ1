@@ -20,6 +20,7 @@ public class Resultaat {
             this.geslaagd = false;
         }
         alleResultaten.add(this);
+        student.addResultaat(this);
     }
 
     public Examen getExamen() {

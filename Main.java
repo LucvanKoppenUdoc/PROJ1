@@ -316,13 +316,13 @@ public class Main {
                 scanner.next();
             }
         }
-        for (Examen examen : getBehaaldeExamens()) {
 
+        for (Examen examen : student.getBehaaldeExamens()) {
+            System.out.println("- " + examen.getNaam());
         }
+        scanner.nextLine();
     }
     private static void meesteExamensGehaald(){
-        // welke student heeft de meeste examens gehaald?
-        // nog afmaken
         System.out.println("hallo");
     }
 }

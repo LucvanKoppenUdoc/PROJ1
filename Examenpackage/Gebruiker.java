@@ -58,6 +58,10 @@ public class Gebruiker {
         return behaaldeExamens;
     }
 
+    public void addResultaat(Resultaat resultaat) {
+        this.resulaten.add(resultaat);
+    }
+
     public Gebruiker getStudentOnName(String naam) {
         Gebruiker match = null;
         for (Gebruiker gebruiker : gebruikerslijst){
