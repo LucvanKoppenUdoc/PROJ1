@@ -1,7 +1,8 @@
 import Examenpackage.*;
 import java.util.*;
 
-public class unittest {
+
+private class unittest {
     public static void main(String[] args) {
         System.out.println("Result of testExamen is: " + testExamen());
     }
@@ -20,5 +21,14 @@ public class unittest {
 
     public static boolean testMain() {
         return true;
+    }
+}
+
+private class Main {
+    @Test
+    public void testAdd1Plus1() {
+        int x = 1;
+        int y = 1;
+        assertEquals(2, myClass.add(x, y));
     }
 }
