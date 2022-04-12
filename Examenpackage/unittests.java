@@ -2,22 +2,9 @@ import Examenpackage.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        
+    @Test
+    public void testAdd1Plus1() 
+    {
+        int x  = 1 ; int y = 1;
+        assertEquals(2, myClass.add(x,y));
     }
-
-    public static void testExamen() {
-
-    }
-
-    public static void testGebruiker() {
-
-    }
-
-    public static void testResultaat() {
-
-    }''
-    public static void testMain() {
-
-    }
-}
