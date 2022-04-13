@@ -354,7 +354,7 @@ public class Main {
                 scanner.next();
             }
         }
-        System.out.println(student.getGemCijferStudent());
+        System.out.printf("Het gemiddelde cijfer van " + student.getNaam() + " is %.1f.", student.getGemCijferStudent());
         scanner.nextLine();
     }
 }

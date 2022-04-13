@@ -62,10 +62,8 @@ public class Gebruiker {
         double sumCijfer = 0.0;
         int countCijfer = 0;
         for (Resultaat resultaat : this.resulaten) {
-            if((resultaat.getCijfer() - 5.5) >= 0.00000000000) {
                 sumCijfer += resultaat.getCijfer();
                 countCijfer ++;
-            }
         }
         gemCijfer = sumCijfer / countCijfer;
         return gemCijfer;
