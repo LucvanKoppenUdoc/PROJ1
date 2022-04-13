@@ -22,6 +22,10 @@ public class Gebruiker {
 
     public Gebruiker(){}
 
+//    public void addGebruiker(Gebruiker gebruiker){
+//        gebruikerslijst.add(gebruiker);
+//    }
+
     public ArrayList<Gebruiker> getGebruikersLijst() {
         return gebruikerslijst;
     }

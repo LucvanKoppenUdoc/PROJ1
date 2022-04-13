@@ -267,7 +267,8 @@ public class Main {
                 System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
                 String inputNaam = scanner.nextLine();
                 for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++) {
-                    if (inputNaam.equals(Gebruiker.gebruikerslijst.get(i).getNaam())) {
+                    if (inputNaam.toLowerCase(Locale.ROOT).equals(Gebruiker.gebruikerslijst.get(i).getNaam().
+                            toLowerCase(Locale.ROOT))) {
                         student = Gebruiker.gebruikerslijst.get(i);
                     }
                 }
