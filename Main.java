@@ -95,10 +95,11 @@ public class Main {
                     6) Is student geslaagd voor test?
                     7) Welke examens heeft student gehaald?
                     8) Welke student heeft de meeste examens gehaald?
+                    9) Wat is gemiddeld cijfer van student?
                     0) Exit
                     Uw keuze:""";
             int menuInput = 11;
-            while (menuInput > 8 || menuInput < 0) {
+            while (menuInput > 9 || menuInput < 0) {
                 try {
                     System.out.println(menu);
                     menuInput = scanner.nextInt();
@@ -134,6 +135,9 @@ public class Main {
 
             } else if (menuInput == 8 && ingelogdeUser.getAdmin()) {
                 meesteExamensGehaald();
+                
+            } else if (menuInput == 9 && ingelogdeUser.getAdmin()) {
+                gemCijferStudent(scanner);
 
             } else if (menuInput == 0) {
                 System.out.println("Programma sluit af...");
@@ -329,5 +333,28 @@ public class Main {
             }
         }
         System.out.println(student.getNaam() + " Heeft met " + student.getBehaaldeExamens().size() + " behaalde examens de meest behaalde examens.");
+    }
+
+    private static void gemCijferStudent(Scanner scanner) {
+        scanner.nextLine();
+        Gebruiker student = new Gebruiker();
+        while (true) {
+            try {
+                System.out.println("Van welke student wil je na gaan wat zijn/haar gemiddelde cijfer is?");
+                String inputNaam = scanner.nextLine();
+                for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++) {
+                    if (inputNaam.equals(Gebruiker.gebruikerslijst.get(i).getNaam())) {
+                        student = Gebruiker.gebruikerslijst.get(i);
+                    }
+                }
+                break;
+            }
+            catch(Exception e){
+                System.out.println("Graag een naam invoeren!");
+                scanner.next();
+            }
+        }
+        System.out.println(student.getGemCijferStudent());
+        scanner.nextLine();
     }
 }

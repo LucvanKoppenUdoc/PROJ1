@@ -57,6 +57,19 @@ public class Gebruiker {
         }
         return behaaldeExamens;
     }
+    public double getGemCijferStudent(){
+        double gemCijfer = 0.0;
+        double sumCijfer = 0.0;
+        int countCijfer = 0;
+        for (Resultaat resultaat : this.resulaten) {
+            if((resultaat.getCijfer() - 5.5) >= 0.00000000000) {
+                sumCijfer += resultaat.getCijfer();
+                countCijfer ++;
+            }
+        }
+        gemCijfer = sumCijfer / countCijfer;
+        return gemCijfer;
+    }
 
     public void addResultaat(Resultaat resultaat) {
         this.resulaten.add(resultaat);
