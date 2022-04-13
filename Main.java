@@ -210,10 +210,10 @@ public class Main {
                 System.out.println("Welke student wilt u verwijderen?");
                 String studentNaam = scanner.nextLine();
                 if (gebruiker.verwijderStudent(studentNaam)) {
-                    System.out.println(studentNaam + " is succesvol verwijderd");
+                    System.out.println(studentNaam + " is succesvol verwijderd!");
                     break;
                 } else {
-                    System.out.println("Er is iets fout gegaan, check uw spelling");
+                    System.out.println("Er is iets fout gegaan, check uw spelling...");
                 }
             }
             catch (Exception e) {
@@ -297,7 +297,6 @@ public class Main {
         } else {
             System.out.println(student.getNaam() + " is niet geslaagd voor " + examen.getNaam() + ".");
         }
-        scanner.nextLine();
     }
     private static void studentExamenGehaald(Scanner scanner){
         scanner.nextLine();
@@ -322,7 +321,6 @@ public class Main {
         for (Examen examen : student.getBehaaldeExamens()) {
             System.out.println("- " + examen.getNaam());
         }
-        scanner.nextLine();
     }
     private static void meesteExamensGehaald(){
         Gebruiker student = new Gebruiker();
@@ -330,9 +328,10 @@ public class Main {
         for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++) {
             if (meestBehaald <= Gebruiker.gebruikerslijst.get(i).getBehaaldeExamens().size()) {
                 student = Gebruiker.gebruikerslijst.get(i);
+                meestBehaald = Gebruiker.gebruikerslijst.get(i).getBehaaldeExamens().size();
             }
         }
-        System.out.println(student.getNaam() + " Heeft met " + student.getBehaaldeExamens().size() + " behaalde examens de meest behaalde examens.");
+        System.out.println(student.getNaam() + " heeft met " + student.getBehaaldeExamens().size() + " behaalde examens de meest behaalde examens.");
     }
 
     private static void gemCijferStudent(Scanner scanner) {
@@ -354,7 +353,8 @@ public class Main {
                 scanner.next();
             }
         }
-        System.out.printf("Het gemiddelde cijfer van " + student.getNaam() + " is %.1f.", student.getGemCijferStudent());
-        scanner.nextLine();
+        System.out.printf("Het gemiddelde cijfer van " + student.getNaam() + " is %.1f.",
+                student.getGemCijferStudent());
+        System.out.println();
     }
 }
