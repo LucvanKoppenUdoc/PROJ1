@@ -9,6 +9,7 @@ class GebruikerTest {
 
     @org.junit.jupiter.api.Test
     void addResultaat() {
+
     }
 
     @org.junit.jupiter.api.Test

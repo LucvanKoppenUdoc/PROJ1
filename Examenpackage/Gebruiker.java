@@ -110,8 +110,13 @@ public class Gebruiker {
     }
 
     public Integer getAantalStudenten() {
+        int aantalStudenten = 0;
+        for (int i = 0; i < gebruikerslijst.size(); i++){
+
+        }
+        System.out.println(gebruikerslijst);
         return gebruikerslijst.size();
-        // todo dit telt ook admins mee!
+
     }
 
 
