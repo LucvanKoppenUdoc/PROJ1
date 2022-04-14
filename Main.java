@@ -332,7 +332,8 @@ public class Main {
                 meestBehaald = Gebruiker.gebruikerslijst.get(i).getBehaaldeExamens().size();
             }
         }
-        System.out.println(student.getNaam() + " heeft met " + student.getBehaaldeExamens().size() + " behaalde examens de meest behaalde examens.");
+        System.out.println(student.getNaam() + " heeft met " + student.getBehaaldeExamens().size() +
+                " behaalde examens de meest behaalde examens.");
     }
 
     private static void gemCijferStudent(Scanner scanner) {

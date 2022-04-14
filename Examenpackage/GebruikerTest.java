@@ -1,8 +1,6 @@
 package Examenpackage;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class GebruikerTest {
@@ -10,11 +8,20 @@ class GebruikerTest {
     @org.junit.jupiter.api.Test
     void addResultaat() {
 
+        //Arrange
+        //Act
+        //Check
+
     }
 
     @org.junit.jupiter.api.Test
     void verwijderStudent() {
-
+        //Arrange
+        Gebruiker gebruiker = new Gebruiker("Bram", 123, "hallo", false);
+        //Act
+        Gebruiker.verwijderStudent("Bram");
+        //Check
+        assertEquals(Gebruiker.getGebruikersLijst().size(), 0);
     }
 
     @org.junit.jupiter.api.Test
@@ -36,10 +43,11 @@ class GebruikerTest {
     void GebruikerslijstTest1() {
         //Hier wordt getest of de grote van gebruikerslijst 1 is na het toevoegen van een student
         //Arrange
+        int Size = Gebruiker.getGebruikersLijst().size();
         Gebruiker gebruiker = new Gebruiker("Bram", 123, "hallo", false);
         int newSize = gebruiker.getGebruikersLijst().size();
         //Act
         //Check
-        assertEquals(newSize, 1);
+        assertEquals(newSize - Size, 1);
     }
 }
