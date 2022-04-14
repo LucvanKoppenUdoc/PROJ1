@@ -26,7 +26,7 @@ public class Gebruiker {
 //        gebruikerslijst.add(gebruiker);
 //    }
 
-    public ArrayList<Gebruiker> getGebruikersLijst() {
+    public static ArrayList<Gebruiker> getGebruikersLijst() {
         return gebruikerslijst;
     }
 
