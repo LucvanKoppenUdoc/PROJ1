@@ -1,7 +1,5 @@
 package Examenpackage;
 
-import org.junit.Assert;
-
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -43,7 +41,7 @@ class ExamenTest {
         Examen.getExamenlijst().get(0).addStudentGeslaagd(gebruiker);
 
         Boolean result = Examen.getExamenlijst().get(0).getStudentGeslaagd(gebruiker);
-        Assert.assertEquals(true, result);
+        assertEquals(true, result);
     }
 
     @org.junit.jupiter.api.Test
