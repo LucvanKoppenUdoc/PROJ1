@@ -119,6 +119,9 @@ public class Gebruiker {
 
     }
 
+    public ArrayList<Resultaat> getResulaten() {
+        return resulaten;
+    }
 
     @Override
     public String toString() {

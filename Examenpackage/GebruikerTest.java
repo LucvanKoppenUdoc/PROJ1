@@ -2,6 +2,8 @@ package Examenpackage;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayList;
+
 
 class GebruikerTest {
 
@@ -9,9 +11,19 @@ class GebruikerTest {
     void addResultaat() {
 
         //Arrange
-        //Act
-        //Check
+        Gebruiker gebruiker = new Gebruiker("Bram", 123, "hallo", false);
+        Examen examen = new Examen("Nederlands", 10);
 
+        ArrayList<String> keuzeAntwoorden = new ArrayList<String>();
+        keuzeAntwoorden.add("1) 12");
+        keuzeAntwoorden.add("2) 13");
+        keuzeAntwoorden.add("3) 14");
+        Vraag vraag = new Vraag("Hoe oud is Bram?", 2, keuzeAntwoorden, examen);
+
+        Resultaat resultaat = new Resultaat(gebruiker, examen, 10.0);
+        //act
+        //Check
+        assertEquals(1, gebruiker.getResulaten().size());
     }
 
     @org.junit.jupiter.api.Test
