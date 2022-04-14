@@ -13,8 +13,7 @@ class ExamenTest {
         keuzeAntwoorden.add("1) Aap");
         keuzeAntwoorden.add("2) Poes");
         keuzeAntwoorden.add("3) Hondje");
-        Vraag vraag = new Vraag("Wat is het lievelingsdier van Bram?", 1, keuzeAntwoorden,
-                examen);
+        Vraag vraag = new Vraag("Wat is het lievelingsdier van Bram?", 1, keuzeAntwoorden, examen);
         ArrayList<String> keuzeAntwoorden1 = new ArrayList<String>();
         keuzeAntwoorden1.add("1) Rikash");
         keuzeAntwoorden1.add("2) Royalistic");
