@@ -39,6 +39,11 @@ class GebruikerTest {
 
     @org.junit.jupiter.api.Test
     void getGemCijferStudent() {
+        //Arrange
+
+        //Act
+
+        //Check
 
     }
 
