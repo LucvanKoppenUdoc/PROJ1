@@ -26,6 +26,7 @@ class GebruikerTest {
 
         //Check
         assertEquals(gebruiker.getResulaten().size(), 1);
+        Gebruiker.verwijderStudent("Bram");
     }
 
     @org.junit.jupiter.api.Test
