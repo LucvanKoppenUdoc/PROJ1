@@ -46,6 +46,10 @@ class ExamenTest {
 
     @org.junit.jupiter.api.Test
     void addVragen() {
+        //Arrange
 
+        //Act
+
+        //Check
     }
 }
