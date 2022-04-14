@@ -21,7 +21,8 @@ class GebruikerTest {
         //Act
         Gebruiker.verwijderStudent("Bram");
         //Check
-        assertEquals(Gebruiker.getGebruikersLijst().size(), 0);
+//        System.out.println(gebruiker.getGebruikersLijst());
+        assertEquals(0, Gebruiker.getGebruikersLijst().size());
     }
 
     @org.junit.jupiter.api.Test
@@ -37,6 +38,7 @@ class GebruikerTest {
         //Act
         //Check
         assertTrue(gebruiker.getGebruikersLijst().contains(gebruiker));
+        Gebruiker.verwijderStudent("Bram");
     }
 
     @Test
@@ -49,5 +51,6 @@ class GebruikerTest {
         //Act
         //Check
         assertEquals(newSize - Size, 1);
+        Gebruiker.verwijderStudent("Bram");
     }
 }
