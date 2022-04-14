@@ -13,14 +13,13 @@ class GebruikerTest {
     }
 
     @org.junit.jupiter.api.Test
-    void verwijderStudent(String naam) {
+    void verwijderStudent() {
         //Arrange
         Gebruiker gebruiker = new Gebruiker("Bram", 123, "hallo", false);
         //Act
-        verwijderStudent("Bram");
+        Gebruiker.verwijderStudent("Bram");
         //Check
-        assertEquals(gebruiker.getGebruikersLijst().size(), 0);
-
+        assertEquals(Gebruiker.getGebruikersLijst().size(), 0);
     }
 
     @org.junit.jupiter.api.Test

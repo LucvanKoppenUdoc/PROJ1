@@ -86,7 +86,7 @@ public class Gebruiker {
         }
         return match;
     }
-    public boolean verwijderStudent(String naam) {
+    public static boolean verwijderStudent(String naam) {
         Gebruiker match = null;
         boolean removed = false;
         for (Gebruiker gebruiker : gebruikerslijst){
