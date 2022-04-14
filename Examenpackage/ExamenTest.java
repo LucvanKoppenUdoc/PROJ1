@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ExamenTest {
-    public ExamenTest(String[] args){
+
+    @org.junit.jupiter.api.Test
+    void addStudentGeslaagd() {
         Examen examen = new Examen("Test", 5);
 
         //Vragen Test
@@ -35,14 +37,12 @@ class ExamenTest {
         keuzeAntwoorden4.add("3) Hoe lang is inderdaad een chinees");
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
         Gebruiker gebruiker = new Gebruiker("Bob", 1234567, "Wachtwoord", false);
-    }
 
-    @org.junit.jupiter.api.Test
-    void addStudentGeslaagd() {
+        System.out.println(Examen.getExamenlijst().get(0).getStudentGeslaagd(gebruiker));
+        System.out.println(gebruiker);
+        System.out.println(Examen.getExamenlijst().get(0).getStudentenGeslaagd());
+        //Examen.getExamenlijst().get(0).setStudentGeslaagd(gebruiker, true);
 
-
-
-        System.out.println(Examen.getExamenlijst());
     }
 
     @org.junit.jupiter.api.Test
