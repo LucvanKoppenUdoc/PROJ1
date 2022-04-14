@@ -37,16 +37,6 @@ class GebruikerTest {
         assertEquals(0, Gebruiker.getGebruikersLijst().size());
     }
 
-    @org.junit.jupiter.api.Test
-    void getGemCijferStudent() {
-        //Arrange
-
-        //Act
-
-        //Check
-
-    }
-
     @Test
     void GebruikerslijstTest() {
         //Hier wordt getest of de gebruiker succesvol aan de gebruikerslijst wordt toegevoegd na het aanmaken.

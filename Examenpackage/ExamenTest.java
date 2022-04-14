@@ -43,13 +43,4 @@ class ExamenTest {
         Boolean result = Examen.getExamenlijst().get(0).getStudentGeslaagd(gebruiker);
         assertEquals(true, result);
     }
-
-    @org.junit.jupiter.api.Test
-    void addVragen() {
-        //Arrange
-
-        //Act
-
-        //Check
-    }
 }
