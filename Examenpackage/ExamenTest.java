@@ -1,5 +1,7 @@
 package Examenpackage;
 
+import org.junit.Assert;
+
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,11 +40,10 @@ class ExamenTest {
         Vraag vraag4 = new Vraag("Hoelang is een chinees?", 3, keuzeAntwoorden4, examen);
         Gebruiker gebruiker = new Gebruiker("Bob", 1234567, "Wachtwoord", false);
 
-        System.out.println(Examen.getExamenlijst().get(0).getStudentGeslaagd(gebruiker));
-        System.out.println(gebruiker);
-        System.out.println(Examen.getExamenlijst().get(0).getStudentenGeslaagd());
-        //Examen.getExamenlijst().get(0).setStudentGeslaagd(gebruiker, true);
+        Examen.getExamenlijst().get(0).addStudentGeslaagd(gebruiker);
 
+        Boolean result = Examen.getExamenlijst().get(0).getStudentGeslaagd(gebruiker);
+        Assert.assertEquals(true, result);
     }
 
     @org.junit.jupiter.api.Test
