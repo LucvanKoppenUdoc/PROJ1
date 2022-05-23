@@ -27,6 +27,10 @@ public class Resultaat {
         return examen;
     }
 
+    public double getCijfer() {
+        return cijfer;
+    }
+    
     public Gebruiker getGebruiker() {
         return gebruiker;
     }

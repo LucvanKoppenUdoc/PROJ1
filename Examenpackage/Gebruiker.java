@@ -22,7 +22,11 @@ public class Gebruiker {
 
     public Gebruiker(){}
 
-    public ArrayList<Gebruiker> getGebruikersLijst() {
+//    public void addGebruiker(Gebruiker gebruiker){
+//        gebruikerslijst.add(gebruiker);
+//    }
+
+    public static ArrayList<Gebruiker> getGebruikersLijst() {
         return gebruikerslijst;
     }
 
@@ -57,6 +61,17 @@ public class Gebruiker {
         }
         return behaaldeExamens;
     }
+    public double getGemCijferStudent(){
+        double gemCijfer = 0.0;
+        double sumCijfer = 0.0;
+        int countCijfer = 0;
+        for (Resultaat resultaat : this.resulaten) {
+                sumCijfer += resultaat.getCijfer();
+                countCijfer ++;
+        }
+        gemCijfer = sumCijfer / countCijfer;
+        return gemCijfer;
+    }
 
     public void addResultaat(Resultaat resultaat) {
         this.resulaten.add(resultaat);
@@ -71,7 +86,7 @@ public class Gebruiker {
         }
         return match;
     }
-    public boolean verwijderStudent(String naam) {
+    public static boolean verwijderStudent(String naam) {
         Gebruiker match = null;
         boolean removed = false;
         for (Gebruiker gebruiker : gebruikerslijst){
@@ -95,10 +110,18 @@ public class Gebruiker {
     }
 
     public Integer getAantalStudenten() {
+        int aantalStudenten = 0;
+        for (int i = 0; i < gebruikerslijst.size(); i++){
+
+        }
+        System.out.println(gebruikerslijst);
         return gebruikerslijst.size();
-        // todo dit telt ook admins mee!
+
     }
 
+    public ArrayList<Resultaat> getResulaten() {
+        return resulaten;
+    }
 
     @Override
     public String toString() {

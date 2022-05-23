@@ -95,10 +95,11 @@ import java.util.*;
                     6) Is student geslaagd voor test?
                     7) Welke examens heeft student gehaald?
                     8) Welke student heeft de meeste examens gehaald?
+                    9) Wat is gemiddeld cijfer van student?
                     0) Exit
                     Uw keuze:""";
             int menuInput = 11;
-            while (menuInput > 8 || menuInput < 0) {
+            while (menuInput > 9 || menuInput < 0) {
                 try {
                     System.out.println(menu);
                     menuInput = scanner.nextInt();
@@ -134,6 +135,9 @@ import java.util.*;
 
             } else if (menuInput == 8 && ingelogdeUser.getAdmin()) {
                 meesteExamensGehaald();
+                
+            } else if (menuInput == 9 && ingelogdeUser.getAdmin()) {
+                gemCijferStudent(scanner);
 
             } else if (menuInput == 0) {
                 System.out.println("Programma sluit af...");
@@ -206,10 +210,10 @@ import java.util.*;
                 System.out.println("Welke student wilt u verwijderen?");
                 String studentNaam = scanner.nextLine();
                 if (gebruiker.verwijderStudent(studentNaam)) {
-                    System.out.println(studentNaam + " is succesvol verwijderd");
+                    System.out.println(studentNaam + " is succesvol verwijderd!");
                     break;
                 } else {
-                    System.out.println("Er is iets fout gegaan, check uw spelling");
+                    System.out.println("Er is iets fout gegaan, check uw spelling...");
                 }
             }
             catch (Exception e) {
@@ -263,7 +267,8 @@ import java.util.*;
                 System.out.println("Van welke student wilt u nagaan of hij is geslaagd voor een test?");
                 String inputNaam = scanner.nextLine();
                 for (int i = 0; i < Gebruiker.gebruikerslijst.size(); i++) {
-                    if (inputNaam.equals(Gebruiker.gebruikerslijst.get(i).getNaam())) {
+                    if (inputNaam.toLowerCase(Locale.ROOT).equals(Gebruiker.gebruikerslijst.get(i).getNaam().
+                            toLowerCase(Locale.ROOT))) {
                         student = Gebruiker.gebruikerslijst.get(i);
                     }
                 }
@@ -293,7 +298,6 @@ import java.util.*;
         } else {
             System.out.println(student.getNaam() + " is niet geslaagd voor " + examen.getNaam() + ".");
         }
-        scanner.nextLine();
     }
     private static void studentExamenGehaald(Scanner scanner){
         scanner.nextLine();
@@ -318,7 +322,6 @@ import java.util.*;
         for (Examen examen : student.getBehaaldeExamens()) {
             System.out.println("- " + examen.getNaam());
         }
-        scanner.nextLine();
     }
     private static void meesteExamensGehaald(){
         Gebruiker student = new Gebruiker();
@@ -329,6 +332,5 @@ import java.util.*;
                 meestBehaald = Gebruiker.gebruikerslijst.get(i).getBehaaldeExamens().size();
             }
         }
-        System.out.println(student.getNaam() + " heeft met " + student.getBehaaldeExamens().size() + " behaalde examens de meest behaalde examens.");
     }
 }
