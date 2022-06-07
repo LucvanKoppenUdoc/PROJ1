@@ -95,8 +95,7 @@ import java.util.*;
                     6) Is student geslaagd voor test?
                     7) Welke examens heeft student gehaald?
                     8) Welke student heeft de meeste examens gehaald?
-                    9) Wat is gemiddeld cijfer van student?
-                    10) Assesment afnemen
+                    9) Assessment opvragen van toets?
                     0) Exit
                     Uw keuze:""";
             int menuInput = 11;
@@ -138,11 +137,7 @@ import java.util.*;
                 meesteExamensGehaald();
                 
             } else if (menuInput == 9 && ingelogdeUser.getAdmin()) {
-                gemCijferStudent(scanner);
-
-            } else if (menuInput == 10 && ingelogdeUser.getAdmin()) {
-                assesmentAfnemen(scanner, ingelogdeUser);
-
+                assessment(scanner, ingelogdeUser);
             } else if (menuInput == 0) {
                 System.out.println("Programma sluit af...");
                 break;
@@ -227,6 +222,7 @@ import java.util.*;
     }
     private static void examenAfnemen(Scanner scanner, Gebruiker huidigeGebruiker){
         int aantalCorrect = 0;
+        ArrayList<Vraag> fout = new ArrayList<Vraag>();
         while(true) {
             int getal = 1;
             for (Examen examen : Examen.getExamenlijst()) {
@@ -235,6 +231,7 @@ import java.util.*;
             System.out.println("Keuze:");
             try {
                 int examenKeuze = scanner.nextInt();
+
                 if (examenKeuze > 0 && (examenKeuze-1) < Examen.getExamenlijst().size()) {
                     Examen tentamen = Examen.getExamenlijst().get(examenKeuze-1);
                     for (int i = 0; i < tentamen.getVragen().size(); i++) {
@@ -246,11 +243,13 @@ import java.util.*;
                         int keuzeStudent = scanner.nextInt();
                         if (keuzeStudent == tentamen.getVragen().get(i).getGoedAntwoord()){
                             aantalCorrect++;
+                        } else {
+                            fout.add(tentamen.getVragen().get(i));
                         }
                     }
                     double tebehalen = tentamen.getTeBehalenPunten();
                     double cijfer = (aantalCorrect / tebehalen) * 10;
-                    Resultaat resultaat = new Resultaat(huidigeGebruiker, tentamen, cijfer);
+                    Resultaat resultaat = new Resultaat(huidigeGebruiker, tentamen, cijfer, fout);
                     break;
                 } else {
                     System.out.println("Graag goede cijfers invoeren");
@@ -326,6 +325,35 @@ import java.util.*;
         for (Examen examen : student.getBehaaldeExamens()) {
             System.out.println("- " + examen.getNaam());
         }
+    }
+    private static void assessment(Scanner scanner, Gebruiker student) {
+        Resultaat gekozenExamen = null;
+        System.out.println("Jij hebt de volgende examens gemaakt:\n");
+        for (Resultaat resultaat : student.getResulaten()) {
+            System.out.println("- " + resultaat.getExamen().getNaam());
+        }
+        scanner.nextLine();
+        while (true) {
+            try {
+                System.out.println("\nVoer naam in van examen waar je een assessment voor wilt:");
+                String naam = scanner.nextLine();
+                for (Resultaat resultaat : student.getResulaten()) {
+                    if (resultaat.getExamen().getNaam().equals(naam)) {
+                        gekozenExamen = resultaat;
+                    }
+                }
+                break;
+            }
+            catch (Exception e) {
+                scanner.next();
+            }
+        }
+        System.out.println("Je had fout(en) bij de volgende vraag/ vragen:");
+        for (Vraag vraag: gekozenExamen.getFout()) {
+            System.out.println("Vraag: " + vraag.getVraagstelling() + "\nJuiste antwoord; " + vraag.getKeuzeAntwoorden().get(vraag.getGoedAntwoord() - 1));
+        }
+        System.out.println("Druk enter om terug te gaan naar hoofdmenu.");
+        scanner.nextLine();
     }
     private static void meesteExamensGehaald(){
         Gebruiker student = new Gebruiker();
