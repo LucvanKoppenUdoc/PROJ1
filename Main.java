@@ -96,6 +96,7 @@ import java.util.*;
                     7) Welke examens heeft student gehaald?
                     8) Welke student heeft de meeste examens gehaald?
                     9) Wat is gemiddeld cijfer van student?
+                    10) Assesment afnemen
                     0) Exit
                     Uw keuze:""";
             int menuInput = 11;
@@ -138,6 +139,9 @@ import java.util.*;
                 
             } else if (menuInput == 9 && ingelogdeUser.getAdmin()) {
                 gemCijferStudent(scanner);
+
+            } else if (menuInput == 10 && ingelogdeUser.getAdmin()) {
+                assesmentAfnemen(scanner, ingelogdeUser);
 
             } else if (menuInput == 0) {
                 System.out.println("Programma sluit af...");
